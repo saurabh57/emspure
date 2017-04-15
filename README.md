@@ -1,0 +1,2 @@
+# emspure
+Education Management System 
