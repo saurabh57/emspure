@@ -1,0 +1,7 @@
+@import '../main';
+
+:local{
+	.headerClass{
+		border-bottom:4px solid $HEADER-BORDER-COLOR;
+	}
+} 
