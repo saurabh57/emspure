@@ -44,9 +44,35 @@ var config = {
 			{
                 test: /\.scss$/,
                 exclude:/node_modules/,
-                loader: ExtractTextPlugin.extract({ 
-                	fallbackLoader: "style-loader", 
-                	use:'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!sass!resolve-url!postcss'})
+                loader: ExtractTextPlugin.extract({
+			      fallbackLoader: 'style-loader',
+			      loader: [
+			        {
+			          loader: 'css-loader',
+			          query: {
+			            modules: true,
+			            sourceMap: true,
+			            localIdentName: '[name]__[local]___[hash:base64:5]',
+			          },
+			        },
+                  {
+			            loader: 'postcss-loader',
+			            options: {
+			              plugins: function () {
+			                return [
+			                  require('autoprefixer')
+			                ];
+			              }
+			            }
+			          },
+			        {
+			          loader: 'sass-loader',
+			          query: {
+			            sourceMap: false,
+			          }
+			        }
+			      ],
+			    })
             }
 		]
 	}
