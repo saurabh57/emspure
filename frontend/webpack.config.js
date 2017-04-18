@@ -14,7 +14,7 @@ var config = {
        components: `${srcPath}/components`,
        customComponent : `${srcPath}/ems-bootstrap`,
        styles:`${srcPath}/styles`,
-       container:`${srcPath}/container`,
+       containers:`${srcPath}/containers`,
        images:`${srcPath}/images`
      }
    },
