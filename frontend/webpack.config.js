@@ -14,13 +14,17 @@ var config = {
        components: `${srcPath}/components`,
        customComponent : `${srcPath}/ems-bootstrap`,
        styles:`${srcPath}/styles`,
+       store:`${srcPath}/store`,
+       sources:`${srcPath}/sources`,
+       routes:`${srcPath}/routes`,
+       reducers:`${srcPath}/reducers`,
        containers:`${srcPath}/containers`,
        images:`${srcPath}/images`
      }
    },
     devtool: "source-map", // any "source-map"-like devtool is possible
 	devServer:{
-		contentBase: './app/',
+		contentBase: './',
 		hot: true,
 		inline:true,
 		port:8080
@@ -68,7 +72,7 @@ var config = {
 			        {
 			          loader: 'sass-loader',
 			          query: {
-			            sourceMap: false,
+			            sourceMap: true,
 			          }
 			        }
 			      ],

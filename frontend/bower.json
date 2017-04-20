@@ -1,0 +1,21 @@
+{
+  "name": "EMSPure",
+  "description": "Education Management System",
+  "main": "main.js",
+  "authors": [
+    "saurabh"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/saurabh57/emspure",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,4 +1,6 @@
-import App from './App';
+import Layout from './Layout';
+import Dashboard from './Dashboard';
 module.exports = {
-	App
+	Layout,
+	Dashboard
 }
