@@ -1,12 +1,17 @@
 //Creating Footer
 import React,{Component} from 'react';
+import style from 'styles/components/footer';
+
 class Footer extends Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
 		return (
-				<div>---------------Footer------------------</div>
+				<footer className={style.mainfooter}>
+					<div className="links"></div>
+					<div className="copyright"></div>
+				</footer>
 			)
 	}
 }

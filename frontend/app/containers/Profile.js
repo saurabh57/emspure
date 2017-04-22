@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
-class Dashboard extends Component{
+class Profile extends Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
 		return (
-				<div>Dashboard</div>
+				<div>Profile</div>
 			)
 	}
 }
 
-export default Dashboard; 
+export default Profile; 
