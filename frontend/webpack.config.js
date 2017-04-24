@@ -9,7 +9,7 @@ var config = {
 		filename:"app.js"
 	},
    	resolve: {
-     extensions: ['.js', '.jsx','.scss'],
+     extensions: ['.js', '.jsx','.scss','.css'],
      alias: {
        components: `${srcPath}/components`,
        customComponent : `${srcPath}/ems-bootstrap`,
@@ -19,7 +19,8 @@ var config = {
        routes:`${srcPath}/routes`,
        reducers:`${srcPath}/reducers`,
        containers:`${srcPath}/containers`,
-       images:`${srcPath}/images`
+       images:`${srcPath}/images`,
+       fonts:`${srcPath}/fonts`
      }
    },
     devtool: "source-map", // any "source-map"-like devtool is possible
@@ -59,7 +60,13 @@ var config = {
 			            localIdentName: '[name]__[local]___[hash:base64:5]',
 			          },
 			        },
-                  {
+			        {
+			          loader: 'resolve-url-loader',
+			          query: {
+			            sourceMap: true,
+			          }
+			        },
+                  	{
 			            loader: 'postcss-loader',
 			            options: {
 			              plugins: function () {
@@ -68,7 +75,7 @@ var config = {
 			                ];
 			              }
 			            }
-			          },
+			         },
 			        {
 			          loader: 'sass-loader',
 			          query: {
@@ -77,7 +84,24 @@ var config = {
 			        }
 			      ],
 			    })
-            }
+            },
+            {
+	          test: /\.(gif|jpe?g|png|svg)(\?.*)?$/,
+	          use: [
+	            'file-loader',
+                {
+			      loader: 'image-webpack-loader',
+			      options: {}
+			    }
+	          ],
+	        },
+	        {
+	          test: /\.(eot|ttf|woff2?)(\?.*)?$/,
+	          loader: 'file-loader',
+	          options: {
+	            name: '[name].[ext]',
+	          },
+	        }
 		]
 	}
 
