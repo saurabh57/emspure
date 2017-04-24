@@ -29,8 +29,8 @@ class EMSHeader extends Component{
 				        </NavDropdown>
 				      </Nav>
 				      <Nav pullRight>
-				        <NavItem eventKey={1} href="#">Link Right</NavItem>
-				        <NavItem eventKey={2} href="#">Link Right</NavItem>
+				        <NavItem eventKey={1}><Link role="button" to="signup">Signup</Link></NavItem>
+				        <NavItem eventKey={1}><Link role="button" to="signin">Signin</Link></NavItem>
 				      </Nav>
 				    </Navbar.Collapse>
 				  </Navbar>

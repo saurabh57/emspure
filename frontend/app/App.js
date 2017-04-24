@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { Provider } from 'react-redux';
 import {Router,Route,IndexRoute,browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
-import {Dashboard,Layout,Profile} from 'containers';
+import {Dashboard,Layout,Profile, Signup, Signin} from 'containers';
 import configureStore from 'store/configureStore';
 
 const store = configureStore();
@@ -14,8 +14,10 @@ class App extends Component{
 					<Router history={history}>
 						<Route path="/" component={Layout}>
 							<IndexRoute component={Dashboard} /> 
+							<Route path="signup" component={Signup} />
+							<Route path="signin" component={Signin} />
 							<Route path="dashboard" component={Dashboard} /> 
-							<Route path="profile" component={Profile} /> 
+							<Route path="profile" component={Profile} />
 						</Route>
 					</Router>
 				</Provider>
