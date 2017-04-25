@@ -8,7 +8,7 @@ class Footer extends Component{
 	}
 	render(){
 		return (
-				<footer className={style.mainfooter}>
+				<footer className={`${style.mainfooter} row`}>
 					<div className="links"></div>
 					<div className="copyright"></div>
 				</footer>

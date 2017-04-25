@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Navbar,Nav,NavItem,NavDropdown,MenuItem } from 'react-bootstrap';
+import EMSButton from './EMSButton';
 import {Link} from 'react-router';
 
 class EMSHeader extends Component{
@@ -9,28 +10,21 @@ class EMSHeader extends Component{
 	render(){
 		const {navbarClass} = this.props;
 		return (
-				<Navbar inverse collapseOnSelect fixedTop className={navbarClass}>
+				<Navbar collapseOnSelect fixedTop className={navbarClass}>
 				    <Navbar.Header>
 				      <Navbar.Brand>
-				        <a href="#">EMS-Pure</a>
+				        <Link to="/">EMS-Pure</Link>
 				      </Navbar.Brand>
 				      <Navbar.Toggle />
 				    </Navbar.Header>
 				    <Navbar.Collapse>
 				      <Nav>
-				        <NavItem eventKey={1}><Link role="button" to="dashboard">Dashboard</Link></NavItem>
-				        <NavItem eventKey={2}><Link role="button" to="profile">Profile</Link></NavItem>
-				        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-				          <MenuItem eventKey={3.1}>Action</MenuItem>
-				          <MenuItem eventKey={3.2}>Another action</MenuItem>
-				          <MenuItem eventKey={3.3}>Something else here</MenuItem>
-				          <MenuItem divider />
-				          <MenuItem eventKey={3.3}>Separated link</MenuItem>
-				        </NavDropdown>
+				        <li role="presentation"><Link role="button" to="dashboard">Dashboard</Link></li>
+				        <li role="presentation"><Link role="button" to="profile">Profile</Link></li>
 				      </Nav>
 				      <Nav pullRight>
-				        <NavItem eventKey={1}><Link role="button" to="signup">Signup</Link></NavItem>
-				        <NavItem eventKey={1}><Link role="button" to="signin">Signin</Link></NavItem>
+				        <li role="presentation"><Link role="button" to="signup"><EMSButton type="primary">Signup</EMSButton></Link></li>
+				        <li role="presentation"><Link role="button" to="signin"><EMSButton type="primary">Signin</EMSButton></Link></li>
 				      </Nav>
 				    </Navbar.Collapse>
 				  </Navbar>

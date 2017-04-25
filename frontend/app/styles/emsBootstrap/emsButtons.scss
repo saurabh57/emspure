@@ -1,0 +1,26 @@
+@import '../main';
+
+:local{
+	.btnDefault{
+		background-color: #ff9b00;
+	    color: white;
+	    min-width: 8em;
+	    border-radius: 5em;
+	    outline: none;
+	    transition:all .4s ease;
+
+	    a{
+	    	color:white;
+	    	text-decoration: none;
+	    }
+	    &:hover{
+	    	transform:scale(1.05);
+	    	color: white;
+	    }
+
+	}
+	.primary{
+		background-color: #ff9b00;
+		color:white;
+	}
+}

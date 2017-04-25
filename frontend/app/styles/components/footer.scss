@@ -2,7 +2,7 @@
 
 :local{
 	.mainfooter{
-	    min-height: 15vh;
+	    min-height: rem-calc(200);
     	background: #222;
 	}
 }
