@@ -28,7 +28,8 @@ var config = {
 		contentBase: './',
 		hot: true,
 		inline:true,
-		port:8080
+		port:8080,
+		historyApiFallback: true
 	},
 	plugins: [
 		new ExtractTextPlugin({
