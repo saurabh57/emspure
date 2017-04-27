@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Link} from 'react-router';
 import style from 'styles/emsBootstrap/emsSignin';
 import {Grid, Form, Row, Col, Checkbox,Radio,ControlLabel,FormControl,FormGroup,Button,HelpBlock} from 'react-bootstrap';
+import EMSButton from './EMSButton';
 class EMSSignin extends Component{
 	constructor(props){
 		super(props);
@@ -38,9 +39,9 @@ class EMSSignin extends Component{
 
 						    <FormGroup>
 						      <Col smOffset={3} sm={2}>
-						        <Button type="submit">
+						        <EMSButton type="submit">
 						          Sign in
-						        </Button>
+						        </EMSButton>
 						      </Col>
 						      <Col sm={4} className={style.forgotPassword}>
 						        <Link to="dashboard">Forgot Password</Link>

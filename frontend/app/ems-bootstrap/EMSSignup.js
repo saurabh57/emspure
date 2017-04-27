@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Grid, Form, Row, Col, Checkbox,Radio,ControlLabel,FormControl,FormGroup,Button,HelpBlock} from 'react-bootstrap';
+import EMSButton from './EMSButton';
 class EMSSignup extends Component{
 	constructor(props){
 		super(props);
@@ -84,9 +85,9 @@ class EMSSignup extends Component{
 
 						    <FormGroup>
 						      <Col smOffset={3} sm={9}>
-						        <Button type="submit">
+						        <EMSButton type="submit">
 						          Sign up
-						        </Button>
+						        </EMSButton>
 						      </Col>
 						    </FormGroup>
 						  </Form>

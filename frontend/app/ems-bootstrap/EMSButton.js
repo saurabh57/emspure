@@ -6,7 +6,7 @@ class EMSButton extends Component{
 	}
 	render(){
 		return (
-				<div className={`btn ${style.btnDefault} ${style[this.props.type]}`} onClick={this.props.onClick}>{this.props.name || this.props.children}</div>
+				<button type={this.props.type} className={`btn ${style.btnDefault} ${style[this.props.type]}`} onClick={this.props.onClick}>{this.props.name || this.props.children}</button>
 			)
 	}
 }

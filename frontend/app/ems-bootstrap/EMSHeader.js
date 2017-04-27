@@ -13,7 +13,7 @@ class EMSHeader extends Component{
 				<Navbar collapseOnSelect fixedTop className={navbarClass}>
 				    <Navbar.Header>
 				      <Navbar.Brand>
-				        <Link to="/">EMS-Pure</Link>
+				        <Link to="/">emspure</Link>
 				      </Navbar.Brand>
 				      <Navbar.Toggle />
 				    </Navbar.Header>
@@ -23,8 +23,9 @@ class EMSHeader extends Component{
 				        <li role="presentation"><Link role="button" to="profile">Profile</Link></li>
 				      </Nav>
 				      <Nav pullRight>
-				        <li role="presentation"><Link role="button" to="signup"><EMSButton type="primary">Signup</EMSButton></Link></li>
-				        <li role="presentation"><Link role="button" to="signin"><EMSButton type="primary">Signin</EMSButton></Link></li>
+				        <li role="presentation"><Link role="button" to="signup">Signup</Link></li>
+				        <li role="presentation"><Link role="button" to="signin">Signin</Link></li>
+				        <li role="presentation"><Link role="button" to="signin">Already have an account</Link></li>
 				      </Nav>
 				    </Navbar.Collapse>
 				  </Navbar>
