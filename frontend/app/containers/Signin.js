@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {EMSSignin} from 'customComponent';
+import {ModuleTitle} from 'components';
 class Signin extends Component{
 	// email id
 	// password
@@ -9,7 +10,10 @@ class Signin extends Component{
 	}
 	render(){
 		return (
-				<div><EMSSignin /></div>
+				<div>
+					<ModuleTitle moduleTitle={"Sign In"}/>
+					<EMSSignin />
+				</div>
 			)
 	}
 }

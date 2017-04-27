@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router';
 import {Grid, Form, Row, Col, Checkbox,Radio,ControlLabel,FormControl,FormGroup,Button,HelpBlock} from 'react-bootstrap';
 import EMSButton from './EMSButton';
+import style from 'styles/emsBootstrap/emsSignin';
 class EMSSignup extends Component{
 	constructor(props){
 		super(props);
@@ -9,23 +11,24 @@ class EMSSignup extends Component{
 		return(
 				<Grid>
 				    <Row className="show-grid">
-				      <Col xs={12} sm={8}>
+				      <Col xs={12} sm={8} smOffset={2}>
 				      	<Form horizontal>
 				      		<FormGroup controlId="formHorizontalFirstName">
 						      <Col componentClass={ControlLabel} sm={3}>
-						        Name
+						        First Name
 						      </Col>
-						      <Col sm={3}>
+						      <Col sm={9}>
 						        <FormControl type="text" placeholder="First Name" required />
 						      </Col>
-						      <Col sm={3}>
-						        <FormControl type="text" placeholder="Middle Name" />
+						    </FormGroup>
+				      		<FormGroup controlId="formHorizontalLastName">
+						      <Col componentClass={ControlLabel} sm={3}>
+						        Last Name
 						      </Col>
-						      <Col sm={3}>
+						      <Col sm={9}>
 						        <FormControl type="text" placeholder="Last Name" />
 						      </Col>
 						    </FormGroup>
-
 						    <FormGroup>
 						    	<Col componentClass={ControlLabel} sm={3}>
 						        	Gender
@@ -88,6 +91,11 @@ class EMSSignup extends Component{
 						        <EMSButton type="submit">
 						          Sign up
 						        </EMSButton>
+						      </Col>
+						    </FormGroup>
+						    <FormGroup>
+						      <Col smOffset={3} sm={4} className={style.forgotPassword}>
+						        <Link to="signin">Already have an account?</Link>
 						      </Col>
 						    </FormGroup>
 						  </Form>

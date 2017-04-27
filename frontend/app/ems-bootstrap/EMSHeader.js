@@ -19,13 +19,12 @@ class EMSHeader extends Component{
 				    </Navbar.Header>
 				    <Navbar.Collapse>
 				      <Nav>
-				        <li role="presentation"><Link role="button" to="dashboard">Dashboard</Link></li>
-				        <li role="presentation"><Link role="button" to="profile">Profile</Link></li>
+				        <NavItem role="presentation"><Link role="button" to="dashboard">Dashboard</Link></NavItem>
+				        <NavItem role="presentation"><Link role="button" to="profile">Profile</Link></NavItem>
 				      </Nav>
 				      <Nav pullRight>
-				        <li role="presentation"><Link role="button" to="signup">Signup</Link></li>
-				        <li role="presentation"><Link role="button" to="signin">Signin</Link></li>
-				        <li role="presentation"><Link role="button" to="signin">Already have an account</Link></li>
+				        <NavItem role="presentation"><Link role="button" to="signup">Signup</Link></NavItem>
+				        <NavItem role="presentation"><Link role="button" to="signin">Signin</Link></NavItem>
 				      </Nav>
 				    </Navbar.Collapse>
 				  </Navbar>

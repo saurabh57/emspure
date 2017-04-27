@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {EMSSignup} from 'customComponent';
+import {ModuleTitle} from 'components';
 // first name
 // middle name
 // last name
@@ -13,9 +14,12 @@ class Signup extends Component{
 	constructor(props){
 		super(props);
 	}
-	render(){
+	render(){app
 		return (
-				<div><EMSSignup /></div>
+				<div>
+					<ModuleTitle moduleTitle={"Sign Up"}/>
+					<EMSSignup />
+				</div>
 			)
 	}
 }

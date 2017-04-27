@@ -11,7 +11,7 @@ class EMSSignin extends Component{
 		return(
 				<Grid>
 				    <Row className="show-grid">
-				      <Col xs={12} sm={8}>
+				      <Col xs={12} sm={6} smOffset={3}>
 				      	<Form horizontal>
 						    <FormGroup controlId="formHorizontalEmail">
 						      <Col componentClass={ControlLabel} sm={3}>
@@ -43,8 +43,10 @@ class EMSSignin extends Component{
 						          Sign in
 						        </EMSButton>
 						      </Col>
-						      <Col sm={4} className={style.forgotPassword}>
-						        <Link to="dashboard">Forgot Password</Link>
+						    </FormGroup>
+						    <FormGroup>
+						      <Col smOffset={3} sm={4} className={style.forgotPassword}>
+						        <Link to="dashboard">Forgot Password?</Link>
 						      </Col>
 						    </FormGroup>
 						  </Form>

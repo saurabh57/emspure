@@ -1,0 +1,9 @@
+@import '../../main';
+
+:local{
+	.moduleTitle{
+		padding: rem-calc(25);
+	    font-size: rem-calc(40);
+	    color: orange;
+	}
+}
