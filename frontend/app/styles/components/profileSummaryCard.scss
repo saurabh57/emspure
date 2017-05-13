@@ -1,0 +1,15 @@
+@import '../main';
+:local{
+	.profileSummaryCard{
+	    position: absolute;
+	    width: 200px;
+	    border: 2px solid #e8e8e8;
+	    left: 8%;
+	    top: 60%;
+
+	    .infoContainer{
+	    	list-style-type: none;
+    	    padding: 0.5em .4em;
+	    }
+	}
+}

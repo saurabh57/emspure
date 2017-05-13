@@ -13,20 +13,12 @@ class EMSSignup extends Component{
 				    <Row className="show-grid">
 				      <Col xs={12} sm={8} smOffset={2}>
 				      	<Form horizontal>
-				      		<FormGroup controlId="formHorizontalFirstName">
+				      		<FormGroup controlId="formHorizontalFullName">
 						      <Col componentClass={ControlLabel} sm={3}>
 						        First Name
 						      </Col>
 						      <Col sm={9}>
-						        <FormControl type="text" placeholder="First Name" required />
-						      </Col>
-						    </FormGroup>
-				      		<FormGroup controlId="formHorizontalLastName">
-						      <Col componentClass={ControlLabel} sm={3}>
-						        Last Name
-						      </Col>
-						      <Col sm={9}>
-						        <FormControl type="text" placeholder="Last Name" />
+						        <FormControl type="text" placeholder="Name" required />
 						      </Col>
 						    </FormGroup>
 						    <FormGroup>
@@ -70,16 +62,6 @@ class EMSSignup extends Component{
 						        <FormControl type="password" placeholder="Password" />
 						      </Col>
 						    </FormGroup>
-
-						    <FormGroup controlId="formHorizontalConfirmPassword">
-						      <Col componentClass={ControlLabel} sm={3}>
-						        Confirm Password
-						      </Col>
-						      <Col sm={9}>
-						        <FormControl type="password" placeholder="Confirm Password" />
-						      </Col>
-						    </FormGroup>
-
 						    <FormGroup>
 						      <Col smOffset={3} sm={9}>
 						        <Checkbox>Remember me</Checkbox>

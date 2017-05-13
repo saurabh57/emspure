@@ -1,33 +1,49 @@
 import React, {Component} from 'react';
-import { Navbar,Nav,NavItem,NavDropdown,MenuItem } from 'react-bootstrap';
-import EMSButton from './EMSButton';
 import {Link} from 'react-router';
-
+import styles from 'styles/emsBootstrap/emsHeader'
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
+		this.state={
+			activeTabIndex:0
+		}
+	}
+	selectTab(index){
+		this.setState({
+			activeTabIndex:index
+		})
 	}
 	render(){
-		const {navbarClass} = this.props;
 		return (
-				<Navbar collapseOnSelect fixedTop className={navbarClass}>
-				    <Navbar.Header>
-				      <Navbar.Brand>
-				        <Link to="/">emspure</Link>
-				      </Navbar.Brand>
-				      <Navbar.Toggle />
-				    </Navbar.Header>
-				    <Navbar.Collapse>
-				      <Nav>
-				        <NavItem role="presentation"><Link role="button" to="dashboard">Dashboard</Link></NavItem>
-				        <NavItem role="presentation"><Link role="button" to="profile">Profile</Link></NavItem>
-				      </Nav>
-				      <Nav pullRight>
-				        <NavItem role="presentation"><Link role="button" to="signup">Signup</Link></NavItem>
-				        <NavItem role="presentation"><Link role="button" to="signin">Signin</Link></NavItem>
-				      </Nav>
-				    </Navbar.Collapse>
-				  </Navbar>
+				<nav className={`navbar navbar-default ${styles.emsheader}`}>
+				  <div className="container-fluid">
+				    <div className="navbar-header">
+				      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span className="sr-only">Toggle navigation</span>
+				        <span className="icon-bar"></span>
+				        <span className="icon-bar"></span>
+				        <span className="icon-bar"></span>
+				      </button>
+				      <a className={`navbar-brand ${styles.navbarBrand}`} href="#">EMSpure</a>
+				    </div>
+
+				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
+				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to="dashboard">Dashboard</Link></li>
+				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to="profile">Profile</Link></li>
+				      </ul>
+				      <form className="navbar-form navbar-left">
+				        <div className="form-group">
+				          <input type="text" className="form-control" placeholder="Search" />
+				        </div>
+				        <button type="submit" className="btn btn-default">Submit</button>
+				      </form>
+				      <ul className={`nav navbar-nav navbar-right`}>
+				        <li><Link className={styles.headerNavLink} to="signin">Log In</Link></li>
+				      </ul>
+				    </div>
+				  </div>
+				</nav>
 			)
 	}
 }
