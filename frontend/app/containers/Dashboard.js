@@ -7,7 +7,7 @@ class Dashboard extends Component{
 	}
 	render(){
 		return (
-				<ProfileLayout />
+				<div>Dashboard</div>
 			)
 	}
 }
