@@ -3,9 +3,12 @@
 	.profileSummaryCard{
 	    position: relative;
 	    width: 90%;
-	    border: 2px solid #e8e8e8;
-	    left: 8%;
-	    top: 12em;
+	    padding: 6%;
+	    max-width: 220px;
+	    border: 1px solid #e8e8e8;
+	    border-radius: 2px;
+	    margin: auto;
+	    top: -10em;
 
 	    .infoContainer{
 	    	list-style-type: none;
