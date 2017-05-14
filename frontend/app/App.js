@@ -17,7 +17,10 @@ class App extends Component{
 							<Route path="signup" component={Signup} />
 							<Route path="signin" component={Signin} />
 							<Route path="dashboard" component={Dashboard} /> 
-							<Route path="profile" component={Profile} />
+							<Route path="profile" component={Profile}>
+								<IndexRoute component={Signin} />
+								<Route path="signup" component={Signup} />
+							</Route>
 						</Route>
 					</Router>
 				</Provider>

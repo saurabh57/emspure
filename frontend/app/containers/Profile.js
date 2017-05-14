@@ -6,7 +6,7 @@ class Profile extends Component{
 	}
 	render(){
 		return (
-				<ProfileLayout />
+				<ProfileLayout children={this.props.children}/>
 			)
 	}
 }
