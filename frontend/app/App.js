@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import {Router,Route,IndexRoute,browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Dashboard,Layout,Profile, Signup, Signin} from 'containers';
+import {About,Organisation} from 'components/tabs';
 import configureStore from 'store/configureStore';
 
 const store = configureStore();
@@ -18,8 +19,9 @@ class App extends Component{
 							<Route path="signin" component={Signin} />
 							<Route path="dashboard" component={Dashboard} /> 
 							<Route path="profile" component={Profile}>
-								<IndexRoute component={Signin} />
-								<Route path="signup" component={Signup} />
+								<IndexRoute component={About} />
+								<Route path="about" component={About} />
+								<Route path="organisation" component={Organisation} />
 							</Route>
 						</Route>
 					</Router>

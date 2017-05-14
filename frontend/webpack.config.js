@@ -49,7 +49,7 @@ var config = {
 			},
 			{
                 test: /\.scss$/,
-                exclude:/node_modules/,
+                exclude:[/node_modules/,/(\.lib)\.scss$/],
                 loader: ExtractTextPlugin.extract({
 			      fallbackLoader: 'style-loader',
 			      loader: [
@@ -84,6 +84,16 @@ var config = {
 			          }
 			        }
 			      ],
+			    })
+            },
+            {
+            	test:/(\.lib)\.scss$/,
+                loader: ExtractTextPlugin.extract({
+			      fallbackLoader: 'style-loader',
+			      loader: [
+			        {
+			          loader: 'css-loader'
+			        }]
 			    })
             },
             {
