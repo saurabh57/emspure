@@ -6,7 +6,7 @@ class TabContainer extends Component{
 	}
 	render(){
 		return(
-				<div className={styles.tabContainer}>
+				<div className={`${styles.tabContainer} col-sm-9`}>
 					{this.props.children}
 				</div>
 
