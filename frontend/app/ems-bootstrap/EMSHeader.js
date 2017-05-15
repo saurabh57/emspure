@@ -29,18 +29,18 @@ class EMSHeader extends Component{
 				    </div>
 
 				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
-				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
-				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
-				      </ul>
 				      <form className="navbar-form navbar-left">
 				        <div className="form-group">
 				          <input type="text" className="form-control" placeholder="Search" />
 				        </div>
 				        <button type="submit" className="btn btn-default">Submit</button>
 				      </form>
+  				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
+				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
+				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
+				      </ul>
 				      <ul className={`nav navbar-nav navbar-right`}>
-				        <li><Link className={styles.headerNavLink} to="signin">Log In</Link></li>
+				        <li><Link className={styles.headerNavLink} to={Routes.signin}>Log In</Link></li>
 				      </ul>
 				    </div>
 				  </div>
