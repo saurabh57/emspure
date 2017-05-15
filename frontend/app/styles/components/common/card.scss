@@ -1,0 +1,37 @@
+@import '../../main';
+:local{
+	.cardContainer{
+	    margin-top: 10px;
+	    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+	    padding: 10px;
+	}
+	.cardTitle{
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+	.cardEditButton{
+		float: right;
+	}
+	.btnDefault{
+		background-color: #ff9b00;
+	    color: white;
+	    min-width: 8em;
+	    border-radius: 7px;
+	    outline: none;
+	    transition:all .4s ease;
+
+	    a{
+	    	color:white;
+	    	text-decoration: none;
+	    }
+	    &:hover{
+	    	transform:scale(1.05);
+	    	color: white;
+	    }
+
+	}
+	.primary{
+		background-color: #ff9b00;
+		color:white;
+	}
+}

@@ -2,7 +2,7 @@
 import React,{Component} from 'react';
 import styles from 'styles/components/tabs/about';
 import Card from 'components/common/Card';
-import {PersonalInfo} from 'components/cards';
+import {PersonalInfo, EducationInfo, ContactInfo} from 'components/cards';
 
 
 class About extends Component{
@@ -12,7 +12,9 @@ class About extends Component{
 	render(){
 		return (
 				<div className={styles.about}>
-					<Card title="personalInfo" cardComponent="PersonalInfo" />
+					<Card title="Personal Info" cardComponent="PersonalInfo" />
+					<Card title="Education Info" cardComponent="EducationInfo" />
+					<Card title="Contact Info" cardComponent="ContactInfo" />
 				</div>
 			)
 	}

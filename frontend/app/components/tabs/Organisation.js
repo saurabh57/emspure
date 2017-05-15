@@ -9,7 +9,7 @@ class Organisation extends Component{
 	render(){
 		return (
 				<div className={styles.organisation}>
-
+					Organisation details
 				</div>
 			)
 	}

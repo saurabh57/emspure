@@ -1,6 +1,6 @@
 //Creating Footer
 import React,{Component} from 'react';
-//import style from 'styles/components/footer';
+import styles from 'styles/components/tabs/about';
 
 class PersonalInfo extends Component{
 	constructor(props){
@@ -8,7 +8,13 @@ class PersonalInfo extends Component{
 	}
 	render(){
 		return (
-				<div>personal data</div>
+				<div>
+					<ul className={styles.cardText}>
+						<li>Name : Arvind Kumar Singh</li>
+						<li>Date Of Birth : 11/10/1991</li>
+						<li>Gender : Male</li>
+					</ul>
+				</div>
 			)
 	}
 }
