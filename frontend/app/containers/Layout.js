@@ -10,10 +10,8 @@ class Layout extends Component{
 		return(
 				<div>
 					<Header />
-						<div className={`${style.mainContainer} row`}>
-							<div className="col-xs-12">
-								{this.props.children}
-							</div>
+						<div className={`${style.mainContainer}`}>
+							{this.props.children}
 						</div>
 					<Footer />
 				</div>

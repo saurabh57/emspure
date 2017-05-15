@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import styles from 'styles/emsBootstrap/emsHeader'
+import styles from 'styles/emsBootstrap/emsHeader';
+import Routes from 'routes';
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
@@ -24,13 +25,13 @@ class EMSHeader extends Component{
 				        <span className="icon-bar"></span>
 				        <span className="icon-bar"></span>
 				      </button>
-				      <a className={`navbar-brand ${styles.navbarBrand}`} href="#">EMSpure</a>
+				      <Link className={`navbar-brand ${styles.navbarBrand}`} to={Routes.home}>EMSpure</Link>
 				    </div>
 
 				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
-				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to="dashboard">Dashboard</Link></li>
-				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to="profile">Profile</Link></li>
+				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
+				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
 				      </ul>
 				      <form className="navbar-form navbar-left">
 				        <div className="form-group">

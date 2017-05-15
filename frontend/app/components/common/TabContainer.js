@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import {Link} from 'react-router';
 import styles from 'styles/components/common/tabContainer';
-
+import Routes from 'routes';
 class TabContainer extends Component{
 	constructor(props){
 		super(props);
@@ -18,8 +18,8 @@ class TabContainer extends Component{
 		return(
 				<div className={`${styles.tabContainer} col-sm-9`}>
 					<ul className="nav nav-tabs">
-  						<li role="presentation" onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? 'active' : ''}`}><Link to="profile/about">About</Link></li>
-						<li role="presentation" onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? 'active' : ''}`}><Link to="profile/organisation">Organisations</Link></li>
+  						<li role="presentation" onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? 'active' : ''}`}><Link to={Routes.profileAbout}>About</Link></li>
+						<li role="presentation" onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? 'active' : ''}`}><Link to={Routes.profileOrganization}>Organisations</Link></li>
 					</ul>
 					<div>{this.props.children}</div>
 				</div>

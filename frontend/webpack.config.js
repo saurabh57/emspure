@@ -3,10 +3,12 @@ const srcPath = path.join(__dirname, './app');
 //We are going to use the ExtractTextPlugin, which moves the generated content into a file.
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = {
-	entry:"./app/main.js",
+	entry:{
+		app: "./app/main.js"
+	},
 	output: {
 		path:`${srcPath}/`,
-		filename:"app.js"
+		filename:"[name].js"
 	},
    	resolve: {
      extensions: ['.js', '.jsx','.scss','.css'],
@@ -33,7 +35,7 @@ var config = {
 	},
 	plugins: [
 		new ExtractTextPlugin({
-			  filename: 'app.css',
+			  filename: '[name].css',
 			  allChunks: true
 			})
     ],
@@ -49,7 +51,7 @@ var config = {
 			},
 			{
                 test: /\.scss$/,
-                exclude:[/node_modules/,/(\.lib)\.scss$/],
+                exclude:[/(node_modules|\/app\/styles\/lib)/],
                 loader: ExtractTextPlugin.extract({
 			      fallbackLoader: 'style-loader',
 			      loader: [
@@ -84,16 +86,6 @@ var config = {
 			          }
 			        }
 			      ],
-			    })
-            },
-            {
-            	test:/(\.lib)\.scss$/,
-                loader: ExtractTextPlugin.extract({
-			      fallbackLoader: 'style-loader',
-			      loader: [
-			        {
-			          loader: 'css-loader'
-			        }]
 			    })
             },
             {
