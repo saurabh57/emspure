@@ -2,6 +2,12 @@
 :local{
 	.tabContainer{
 		position:relative;
-		margin: 10px 0;
+		width:100%;
+		display:inline-block;
+		background: #fff;
+		ul{
+		    width: 45%;
+    		margin: auto;
+		}
 	}
 }

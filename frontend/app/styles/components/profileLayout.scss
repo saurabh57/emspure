@@ -2,8 +2,27 @@
 :local{
 	.profileLayoutContainer{
 		position:relative;
+		.leftContent{
+			position: absolute;
+			display:inline-block;
+			width:25%;
+		}
+		.middleContent{
+			position: relative;
+			display:inline-block;
+			width:50%;
+			margin:0 25%;
+		}
+		.rightContent{
+			position: absolute;
+			display:inline-block;
+			width:25%;
+		}
 	}
-	.leftContainer{
-		position: relative;
+	.profileWrapper{
+		width:90%;
+		position:relative;
+		margin:auto;
 	}
+
 }

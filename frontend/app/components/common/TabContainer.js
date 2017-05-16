@@ -16,12 +16,11 @@ class TabContainer extends Component{
 	}
 	render(){
 		return(
-				<div className={`${styles.tabContainer} col-sm-9`}>
+				<div className={`${styles.tabContainer}`}>
 					<ul className="nav nav-tabs">
   						<li role="presentation" onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? 'active' : ''}`}><Link to={Routes.profileAbout}>About</Link></li>
 						<li role="presentation" onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? 'active' : ''}`}><Link to={Routes.profileOrganization}>Organisations</Link></li>
 					</ul>
-					<div>{this.props.children}</div>
 				</div>
 
 			)
