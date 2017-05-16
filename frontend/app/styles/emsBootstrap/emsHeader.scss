@@ -34,9 +34,12 @@
 		    }
 	    }
 	    .navbarBrand{
-	    	color:$DEFAULT-FONT-COLOR;
-	    	&:hover,&:focus{
+	    	color:#84e2ff;
+	    	&:hover{
 	    		color:$DEFAULT-FONT-COLOR;
+	    	}
+	    	&:focus{
+    			color:#84e2ff;
 	    	}	    	
 	    }
     	li>a.headerNavLink{
