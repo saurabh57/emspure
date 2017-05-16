@@ -6,13 +6,8 @@ class EMSHeader extends Component{
 	constructor(props){
 		super(props);
 		this.state={
-			activeTabIndex:0
+
 		}
-	}
-	selectTab(index){
-		this.setState({
-			activeTabIndex:index
-		})
 	}
 	render(){
 		return (
@@ -36,8 +31,8 @@ class EMSHeader extends Component{
 				        <button type="submit" className="btn btn-default">Submit</button>
 				      </form>
   				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
-				        <li onClick={()=>this.selectTab(0)} className={`${this.state.activeTabIndex == 0 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
-				        <li onClick={()=>this.selectTab(1)} className={`${this.state.activeTabIndex == 1 ? styles.active : ''}`}><Link className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
+				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
+				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
 				      </ul>
 				      <ul className={`nav navbar-nav navbar-right`}>
 				        <li><Link className={styles.headerNavLink} to={Routes.signin}>Log In</Link></li>

@@ -19,7 +19,7 @@
 	    				color:$DEFAULT-FONT-COLOR;
 	    			}
 		    	}
-		    	&.active>a.headerTabLink{
+		    	a.active{
 		    		color:$DEFAULT-FONT-COLOR;
 		    		&:before{
 		    			content:" ";
@@ -41,9 +41,10 @@
 	    }
     	li>a.headerNavLink{
 			color:$DEFAULT-FONT-COLOR;
-			&:hover{
-				background:rgba(153, 153, 153, 0.2);
-			}
+	    	&:hover,&:focus{
+	    		color:$DEFAULT-FONT-COLOR;
+	    		background:rgba(153, 153, 153, 0.2);
+	    	}
     	}
 	}
 }
