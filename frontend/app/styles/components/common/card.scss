@@ -2,7 +2,7 @@
 :local{
 	.cardContainer{
 	    margin-top: 10px;
-	    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+	    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 	    padding: 10px;
         background: #fff;
 	}
@@ -14,9 +14,9 @@
 		float: right;
 	}
 	.btnDefault{
-		background-color: #ff9b00;
+		background-color: #00BCD4;
 	    color: white;
-	    min-width: 8em;
+	    min-width: 5em;
 	    border-radius: 7px;
 	    outline: none;
 	    transition:all .4s ease;
@@ -34,5 +34,15 @@
 	.primary{
 		background-color: #ff9b00;
 		color:white;
+	}
+	.cardShowMore{
+		display: block;
+	    position: relative;
+	    bottom: -10px;
+	    border: 0;
+	    margin-left: -10px;
+	    width: 103%;
+	    background: #00BCD4;
+	    color: #fff;
 	}
 }
