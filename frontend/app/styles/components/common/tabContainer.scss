@@ -11,8 +11,10 @@
     		margin: auto;
     		li{
     			display:inline-block;
+    			text-transform: uppercase;
     			a{
     				color:grey;
+	    			font-size: .9em;
     			}
     		}
 	    	a.active{

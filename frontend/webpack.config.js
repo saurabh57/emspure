@@ -14,7 +14,8 @@ var config = {
      extensions: ['.js', '.jsx','.scss','.css'],
      alias: {
        components: `${srcPath}/components`,
-       customComponent : `${srcPath}/ems-bootstrap`,
+       bootstrapComponent : `${srcPath}/ems-bootstrap`,
+       materialUIComponent: `${srcPath}/ems-material`,
        styles:`${srcPath}/styles`,
        store:`${srcPath}/store`,
        sources:`${srcPath}/sources`,
