@@ -24,6 +24,7 @@ class Card extends Component{
 						<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Cancel</button>
 						<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Save</button>
 					</div>
+					<button className={styles.cardShowMore}>+ More</button>
 				</div>
 			)
 	}
