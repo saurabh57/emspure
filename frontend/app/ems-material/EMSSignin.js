@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import styles from 'styles/emsMaterial/emsSignin';
 import {Link} from 'react-router';
-import TextField from 'material-ui/TextField';
+import {InputText,DropDown,StandardButton} from 'components/common/Forms';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import PATHS from 'routes';
@@ -38,23 +38,19 @@ class SignIn extends Component{
 		return(
 				<div className={styles.signInWrapper}>
 					<div className={`${styles.signInUi}`} style={modalstyle}>
-					<TextField
-					      hintText='Username/Email'
-					      hintStyle={hintstyle}
-					      inputStyle={inputstyle}
-					      underlineStyle={underlinestyle}
-					      fullWidth={true}
-					      underlineFocusStyle={underlineFocusstyle}
-					/>
-					<TextField
-						  type='password'
-					      hintText='Password'
-					      hintStyle={hintstyle}
-					      inputStyle={inputstyle}
-					      underlineStyle={underlinestyle}
-					      fullWidth={true}
-					      underlineFocusStyle={underlineFocusstyle}
-					/>
+					<InputText label='Username/Email'
+								color='grey'
+								underlineColor='#d6d6d6'
+								underlineWidth='2px'
+								labelColor='#6a6a6a'
+								/>
+					<InputText label='Password'
+								type='password'
+								color='grey'
+								underlineColor='#d6d6d6'
+								underlineWidth='2px'
+								labelColor='#6a6a6a'
+								/>
 					<div className='buttons'>
 						<RaisedButton
 							label='Sign In'
