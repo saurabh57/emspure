@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {EMSSignup} from 'customComponent';
+import {EMSSignup} from 'materialUIComponent';
 import {ModuleTitle} from 'components';
 // first name
 // middle name

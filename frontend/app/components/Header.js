@@ -1,6 +1,6 @@
 //Creating main header 
 import React,{Component} from 'react';
-import {EMSHeader} from 'customComponent';
+import {EMSHeader} from 'bootstrapComponent';
 import style from 'styles/components/header';
 class Header extends Component{
 	constructor(props){

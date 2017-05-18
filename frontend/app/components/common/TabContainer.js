@@ -12,7 +12,7 @@ class TabContainer extends Component{
 	render(){
 		return(
 				<div className={`${styles.tabContainer}`}>
-					<ul className={`nav ${styles.navTabs}`}>
+					<ul className={`nav ${styles.navTabs} col-sm-6 col-xs-12 col-sm-offset-3`}>
   						<li role="presentation"><Link activeClassName={styles.active} to={Routes.profileAbout}>About</Link></li>
 						<li role="presentation"><Link activeClassName={styles.active} to={Routes.profileOrganization}>Organisations</Link></li>
 					</ul>

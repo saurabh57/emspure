@@ -1,0 +1,31 @@
+@import '../main';
+:local{
+	.signInWrapper{
+		max-width:35em;
+		margin:auto;
+	}
+	.signInUi{
+		color: grey;
+	    background: ghostwhite;
+	    padding: 0 1em 1em 1em;
+	    float: none;
+	    margin: auto;
+		.buttons{
+		    padding: .5em 0;
+		    font-size: .8em;
+		    font-weight: 100;
+		}
+		.links{
+		    padding: .5em 0;
+		    font-size: 1em;
+		    font-weight: 100;
+		    span{
+			    cursor: pointer;
+			    color: white;
+			    &:hover{
+				    text-decoration: underline;
+				}
+			}
+		}
+	}
+}

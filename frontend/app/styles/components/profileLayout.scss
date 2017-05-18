@@ -4,25 +4,18 @@
 		position:relative;
 		.leftContent{
 			position: absolute;
-			display:inline-block;
-			width:25%;
+		    z-index: 1;
 		}
 		.middleContent{
 			position: relative;
-			display:inline-block;
-			width:50%;
-			margin:0 25%;
+			float:none;
 		}
 		.rightContent{
 			position: absolute;
-			display:inline-block;
-			width:25%;
 		}
 	}
 	.profileWrapper{
-		width:90%;
 		position:relative;
-		margin:auto;
 	}
 
 }
