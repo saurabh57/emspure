@@ -3,11 +3,16 @@
 	.cardContainer{
 	    padding: 10px;
         background: #fff;
+        position: relative;
 	}
 	.cardContainerss{
 	    margin-top: 10px;
 	    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
         background: #fff;
+	}
+	.cardRibbonContainer{
+		position: relative;
+		height: 40px;
 	}
 	.cardTitle{
 		font-weight: bold;
@@ -44,7 +49,7 @@
 	    bottom: 0px;
 	    border: 0;
 	    width: 100%;
-	    background: #00BCD4;
+	    background: #0bc5ff;
 	    color: #fff;
 	}
 }

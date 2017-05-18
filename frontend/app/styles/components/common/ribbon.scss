@@ -1,0 +1,69 @@
+@import '../../main';
+:local{
+	.ribbonContainer{
+		position: absolute;
+	    top: 5px;
+	    left: -49px;
+	    overflow: visible;
+	    font-size: 16px;
+	    line-height: 8px;
+	}
+	.ribbonContainer:before{
+		content: "";
+	    height: 0;
+	    width: 0;
+	    display: block;
+	    position: absolute;
+	    top: -2px;
+	    right: -18px;
+	    border-top: 16px solid rgba(0, 0, 0, 0.3);
+	    border-bottom: 16px solid rgba(0, 0, 0, 0.3);
+	    border-left: 16px solid transparent;
+	    border-right: 16px solid transparent;
+	}
+	.ribbonContainer:after{
+		content: "";
+	    height: 2px;
+	    background: rgba(0, 0, 0, 0.3);
+	    display: block;
+	    position: absolute;
+	    top: -2px;
+	    left: 39px;
+	    right: 12px;
+	}
+	.ribbonContainer a{
+		display: block;
+	    padding: 12px;
+	    position: relative;
+	    background: #0bc5ff;
+	    height: 32px;
+	    margin-left: 29px;
+	    overflow: visible;
+	    color: #fff;
+	    text-decoration: none;
+	}
+	.ribbonContainer a:before{
+		content: "";
+	    height: 0;
+	    width: 0;
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    right: -16px;
+	    border-top: 16px solid #0bc5ff;
+	    border-bottom: 16px solid #0bc5ff;
+	    border-left: 16px solid transparent;
+	    border-right: 16px solid transparent;
+	}
+	.ribbonContainer a:after{
+		content: "";
+	    height: 0;
+	    width: 0;
+	    display: block;
+	    position: absolute;
+	    top: -10px;
+	    left: 0px;
+	    border-bottom: 10px solid #004a70;
+	    border-left: 10px solid transparent;
+	}
+}
