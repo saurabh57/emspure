@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import styles from 'styles/emsBootstrap/emsHeader';
 import Routes from 'routes';
+import {replaceParamInRoot} from 'utils';
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
@@ -12,7 +13,7 @@ class EMSHeader extends Component{
 	render(){
 		return (
 				<nav className={`navbar navbar-default ${styles.emsheader}`}>
-				  <div className="container-fluid">
+				  <div className={`container-fluid ${styles.emsheaderContent}`}>
 				    <div className="navbar-header">
 				      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				        <span className="sr-only">Toggle navigation</span>
@@ -32,7 +33,7 @@ class EMSHeader extends Component{
 				      </form>
   				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
 				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
-				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.profile}>Profile</Link></li>
+				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={replaceParamInRoot(Routes.profile,'username','user')}>Profile</Link></li>
 				      </ul>
 				      <ul className={`nav navbar-nav navbar-right`}>
 				        <li><Link className={styles.headerNavLink} to={Routes.signin}>Log In</Link></li>

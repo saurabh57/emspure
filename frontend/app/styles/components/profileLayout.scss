@@ -17,5 +17,8 @@
 	.profileWrapper{
 		position:relative;
 	}
-
+	.coverWrapper {
+		position: relative;
+		@include elevation();
+	}
 }

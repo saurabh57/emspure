@@ -3,12 +3,9 @@ const HOME = `${ROOT}/`;
 const SIGNUP = `/signup`;
 const SIGNIN = `/signin`;
 const DASHBOARD = `/dashboard`;
-const PROFILE = `/profile`;
-const PROFILE_USER = `/profile/:username`;
-const PROFILE_ABOUT = `/profile/about`;
-const PROFILE_ABOUT_USER = `/profile/:username/about`;
-const PROFILE_ORGANIZATION = `/profile/organization`;
-const PROFILE_ORGANIZATION_USER = `/profile/:username/organization`;
+const PROFILE = `/:username`;
+const PROFILE_ABOUT = `/:username/about`;
+const PROFILE_ORGANIZATION = `/:username/organization`;
 const DEFAULT = `${PROFILE}`;
 
 const ROUTER_MASTER = {
