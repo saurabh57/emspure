@@ -1,9 +1,12 @@
 @import '../../main';
 :local{
 	.cardContainer{
+	    padding: 10px;
+        background: #fff;
+	}
+	.cardContainerss{
 	    margin-top: 10px;
 	    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
-	    padding: 10px;
         background: #fff;
 	}
 	.cardTitle{
@@ -38,10 +41,9 @@
 	.cardShowMore{
 		display: block;
 	    position: relative;
-	    bottom: -10px;
+	    bottom: 0px;
 	    border: 0;
-	    margin-left: -10px;
-	    width: 103%;
+	    width: 100%;
 	    background: #00BCD4;
 	    color: #fff;
 	}
