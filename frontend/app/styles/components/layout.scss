@@ -1,9 +1,9 @@
 @import '../main';
 :local{
 	.mainContainer{
-	    min-height: rem-calc(1000);
+	    min-height: 100vh;
 	    font-family: 'Roboto-Regular';
-	    margin-top: 50px;
+	    padding-top: 50px;
         padding-bottom: 15px;
 	    background: $LAYOUT_BACKGROUND;
 	}
