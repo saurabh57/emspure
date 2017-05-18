@@ -3,7 +3,11 @@ import styles from 'styles/components/common/card';
 import * as CARD_COMPONENTS from 'components/cards';
 import Icon from 'components/common/Icon';
 //import EMSButton from 'components/ems-bootstrap/EMSButton';
-//<li><Icon iconClass="pencil-square-o"/></li>						
+//<li><Icon iconClass="pencil-square-o"/></li>		
+//<div>
+	//<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Cancel</button>
+	//<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Save</button>
+//</div>				
 
 
 class Card extends Component{
@@ -28,10 +32,6 @@ class Card extends Component{
 							<span onClick={this.getComponent.bind(this, this.props.title)} className={styles.cardEditButton}>Edit</span>
 						</div>
 						<CardComponent {...this.props}/>
-						<div>
-							<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Cancel</button>
-							<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Save</button>
-						</div>
 					</div>
 					<div>
 						<button className={styles.cardShowMore}>+ More</button>
