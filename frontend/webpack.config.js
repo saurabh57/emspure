@@ -25,8 +25,11 @@ var config = {
        images:`${srcPath}/images`,
        fonts:`${srcPath}/fonts`,
        utils:`${srcPath}/utils`,
+       constants:`${srcPath}/constants`,
+       actions:`${srcPath}/actions`,
      }
    },
+    debug: true,
     devtool: "source-map", // any "source-map"-like devtool is possible
 	devServer:{
 		contentBase: './',

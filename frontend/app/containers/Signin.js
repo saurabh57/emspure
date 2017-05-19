@@ -1,6 +1,9 @@
-import React,{Component} from 'react';
+import React,{Component, PropTypes} from 'react';
 import {EMSSignin} from 'materialUIComponent';
 import {ModuleTitle} from 'components';
+import { connect } from 'react-redux';
+import * as actions from 'actions/user';
+
 class Signin extends Component{
 	// email id
 	// password
@@ -10,12 +13,30 @@ class Signin extends Component{
 	}
 	render(){
 		return (
-				<div>
-					<ModuleTitle moduleTitle={"Sign In"}/>
-					<EMSSignin />
-				</div>
-			)
+			<div>
+				<ModuleTitle moduleTitle={"Sign In"}/>
+				<EMSSignin login={this.props.login}/>
+			</div>
+		);
 	}
 }
 
-export default Signin; 
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		login: (user) => {
+			actions.login(dispatch,user);
+		}
+	}
+};
+
+Signin.propTypes = {
+	login: PropTypes.func
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);

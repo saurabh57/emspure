@@ -35,7 +35,7 @@
 		display: block;
 	    padding: 12px;
 	    position: relative;
-	    background: #0bc5ff;
+	    background: $TAB-ACTIVE-COLOR;
 	    height: 32px;
 	    margin-left: 29px;
 	    overflow: visible;
@@ -50,8 +50,8 @@
 	    position: absolute;
 	    top: 0;
 	    right: -16px;
-	    border-top: 16px solid #0bc5ff;
-	    border-bottom: 16px solid #0bc5ff;
+	    border-top: 16px solid $TAB-ACTIVE-COLOR;
+	    border-bottom: 16px solid $TAB-ACTIVE-COLOR;
 	    border-left: 16px solid transparent;
 	    border-right: 16px solid transparent;
 	}

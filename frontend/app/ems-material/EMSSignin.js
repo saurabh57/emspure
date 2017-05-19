@@ -35,6 +35,7 @@ class SignIn extends Component{
 		const linkstyle ={
 			color:'grey' || 'white'
 		}
+		const {login} = this.props;
 		return(
 				<div className={styles.signInWrapper}>
 					<div className={`${styles.signInUi}`} style={modalstyle}>
@@ -57,6 +58,7 @@ class SignIn extends Component{
 							fullWidth={fullWidthButtton || false}
 							backgroundColor={'#00BFA5'}
 							labelColor="#fff"
+							onClick={login}
 						/>
 					</div>
 					<div className={`${styles.links}`}>

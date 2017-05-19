@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import styles from 'styles/emsBootstrap/emsHeader';
 import Routes from 'routes';
 import {replaceParamInRoot} from 'utils';
+import { headerLinks } from 'sources';
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
@@ -11,6 +12,7 @@ class EMSHeader extends Component{
 		}
 	}
 	render(){
+		const {user} = this.props;
 		return (
 				<nav className={`navbar navbar-default ${styles.emsheader}`}>
 				  <div className={`container-fluid ${styles.emsheaderContent}`}>
@@ -32,8 +34,26 @@ class EMSHeader extends Component{
 				        <button type="submit" className="btn btn-default">Submit</button>
 				      </form>
   				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
+				      { /*
 				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
 				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={replaceParamInRoot(Routes.profile,'username','user')}>Profile</Link></li>
+				      	*/
+				  	  }
+				      {
+				        headerLinks.map((data, index) => {
+				        	return ((data.role && user && user.id) || !data.role) && (
+				        		<li key={index}>
+				        			<Link
+				        				activeClassName={styles.active}
+				        				className={styles.headerTabLink}
+				        				to={replaceParamInRoot(data.toLink,'username','user')}
+				        			>
+				        				{data.displayText}
+				        			</Link>
+				        		</li>
+				        	);
+				        })
+				      }
 				      </ul>
 				      <ul className={`nav navbar-nav navbar-right`}>
 				        <li><Link className={styles.headerNavLink} to={Routes.signin}>Log In</Link></li>

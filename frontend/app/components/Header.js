@@ -7,8 +7,9 @@ class Header extends Component{
 		super(props);
 	}
 	render(){
+		const {user} = this.props;
 		return (
-				<EMSHeader navbarClass={style.headerClass} />
+				<EMSHeader navbarClass={style.headerClass} user={user}/>
 			)
 	}
 }
