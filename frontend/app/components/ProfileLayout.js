@@ -10,11 +10,13 @@ class ProfileLayout extends Component{
 	render(){
 		return(
 			<div className={styles.profileLayoutContainer}>
-				<CoverPic />
+				<div className={styles.coverWrapper}>
+					<CoverPic />
+					<TabContainer/>
+				</div>
 				<div className={`${styles.leftContent} col-sm-3 col-xs-12`}>
 					<ProfileSummaryCard />
 				</div>
-				<TabContainer/>
 				<div className={styles.profileWrapper}>
 					<div className={`${styles.middleContent} col-sm-6 col-xs-12 col-sm-offset-3`}>
 						{this.props.children}

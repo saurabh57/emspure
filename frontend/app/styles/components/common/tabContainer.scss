@@ -3,9 +3,8 @@
 	.tabContainer{
 		position:relative;
 		width:100%;
-		display:inline-block;
+	    display: table;
 	    background: $GLOBAL_BORDER;
-    	box-shadow: 0px 1px 1px #c7c7c7;
 		.navTabs{
 			padding-left:15px;
     		li{

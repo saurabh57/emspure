@@ -5,12 +5,11 @@
 	    width: 100%;
 	    padding: 6%;
 	    max-width: 220px;
-	    border: 1px solid $GLOBAL_BORDER;
-	    border-radius: 2px;
 	    background: #fff;
 	    margin: auto;
 	    top: -10em;
-
+	    @include elevation();
+	    
 	    .infoContainer{
 	    	list-style-type: none;
     	    padding: 0.5em .4em;

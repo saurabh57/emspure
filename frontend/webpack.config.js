@@ -23,7 +23,8 @@ var config = {
        reducers:`${srcPath}/reducers`,
        containers:`${srcPath}/containers`,
        images:`${srcPath}/images`,
-       fonts:`${srcPath}/fonts`
+       fonts:`${srcPath}/fonts`,
+       utils:`${srcPath}/utils`,
      }
    },
     devtool: "source-map", // any "source-map"-like devtool is possible
