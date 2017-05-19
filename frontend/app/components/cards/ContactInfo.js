@@ -1,7 +1,8 @@
 //Creating Footer
 import React,{Component} from 'react';
 import styles from 'styles/components/tabs/about';
-
+import Icon from 'components/common/Icon';
+//<i class="fa fa-envelope-o" aria-hidden="true"></i>
 class ContactInfo extends Component{
 	constructor(props){
 		super(props);
@@ -10,10 +11,11 @@ class ContactInfo extends Component{
 		return (
 				<div>
 					<ul className={styles.cardText}>
-						<li>Email Address : arvindsinghnitp@gmail.com</li>
-						<li>Mobile No. : 9591193914</li>
-						<li>Address : Pragath layout, bangalore</li>
-						<li>Pin Code : 560037</li>
+						<ul className={styles.cardText}>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="envelope-o fa-lg"/></span><span>arvindsinghnitp@gmail.com</span></li>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="mobile fa-lg"/></span><span>9591193914</span></li>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="location-arrow fa-lg"/></span><span>Pragath layout, bangalore, 560037</span></li>
+						</ul>
 					</ul>
 				</div>
 			)

@@ -10,9 +10,9 @@ class PersonalInfo extends Component{
 		return (
 				<div>
 					<ul className={styles.cardText}>
-						<li>Name : Arvind Kumar Singh</li>
-						<li>Date Of Birth : 11/10/1991</li>
-						<li>Gender : Male</li>
+						<li className={styles.textBlock}><span className={styles.cardLabel}>Name :</span><span>Arvind Kumar Singh</span></li>
+						<li className={styles.textBlock}><span className={styles.cardLabel}>Date Of Birth :</span><span>11/10/1991</span></li>
+						<li className={styles.textBlock}><span className={styles.cardLabel}>Gender :</span><span>Male</span></li>
 					</ul>
 				</div>
 			)
