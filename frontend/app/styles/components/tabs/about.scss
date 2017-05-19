@@ -7,4 +7,19 @@
 		list-style: none;
 		padding-left: 0;
 	}
+	.textBlock{
+    	padding: 3px 0;
+	}
+	.textBlockBold {
+		font-size: 16px;
+    	font-weight: bold;
+	}
+	.cardLabel{
+		display: inline-block;
+    	width: 25%;
+	}
+	.cardLabelIcon{
+		display: inline-block;
+    	width: 7%;
+	}
 }
