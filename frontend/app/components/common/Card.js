@@ -38,9 +38,6 @@ class Card extends Component{
 						</div>
 						<CardComponent {...this.props}/>
 					</div>
-					<div>
-						<button className={styles.cardShowMore}>+ More</button>
-					</div>
 				</div>
 			)
 	}
