@@ -29,7 +29,6 @@ var config = {
        actions:`${srcPath}/actions`,
      }
    },
-    debug: true,
     devtool: "source-map", // any "source-map"-like devtool is possible
 	devServer:{
 		contentBase: './',
