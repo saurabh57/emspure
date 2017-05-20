@@ -9,10 +9,14 @@ class Organisation extends Component{
 		super(props);
 	}
 	render(){
-		const metaData = OrganisationDefault.orgNotification;
+		const organisations = OrganisationDefault;
 		return (
 				<div className={styles.organisation}>
-					<Card title="Organisation Summary" cardComponent="OrganisationUpdateInfo" metaData={metaData} />
+				{
+					organisations.map((data, index) => {
+						return <Card key={index} title={data.orgName} cardComponent="OrganisationUpdateInfo" {...data} />
+					})
+				}
 				</div>
 			)
 	}

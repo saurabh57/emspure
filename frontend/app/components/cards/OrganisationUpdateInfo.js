@@ -8,16 +8,19 @@ class OrganisationUpdateInfo extends Component{
 		super(props);
 	}
 	render(){
-    const { metaData } = this.props;
+    const { orgNotification } = this.props;
 		return (
 			<div className={styles.orgNotification}>
 				<ul className={styles.cardItems}>
         {
-          metaData.map((data, index) => {
+          orgNotification.map((data, index) => {
             return (
               <li className={styles.orgItem} key={index}>
                 <Icon iconClass={`${data.iconClass} ${styles.fs5em}`} />
-                <span className={styles.orgItemCount}>{data.updateCount}</span>
+                <div className={styles.orgItemName}>
+                  <span>{data.displayText}</span>
+                  <span className={styles.orgItemCount}>[ {data.updateCount} ]</span>
+                </div>
               </li>
             );
           })
