@@ -56,4 +56,41 @@
 	span.cardEditButton .customedit{
 		padding: 7px !important;
 	}
+
+
+	.cardItems {
+		list-style: none;
+		text-align: center;
+		padding-left: 0px;
+	}
+	.orgNotification{
+		margin: auto;
+	}
+	.orgItem {
+		position: relative;
+		display: inline-block;
+		width: 100px;
+		padding: 10px 15px;
+		margin: 20px 10px;
+		font-size: 14px;
+    font-weight: 600;
+    color: #1b92b7;
+		border: 1px solid #f3f3f3;
+		border-radius: 5px;
+	}
+	.orgItemCount {
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		height: 20px;
+		width: 20px;
+		text-align: center;
+		border-radius: 50%;
+		background: #e88d46;
+    color: white;
+	}
+	.fs5em {
+		font-size: 5em;
+	}
+
 }

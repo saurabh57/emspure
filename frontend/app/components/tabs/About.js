@@ -2,8 +2,6 @@
 import React,{Component} from 'react';
 import styles from 'styles/components/tabs/about';
 import Card from 'components/common/Card';
-import {PersonalInfo, EducationInfo, ContactInfo} from 'components/cards';
-
 
 class About extends Component{
 	constructor(props){
@@ -20,4 +18,4 @@ class About extends Component{
 	}
 }
 
-export default About; 
+export default About;
