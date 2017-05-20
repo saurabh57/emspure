@@ -1,0 +1,11 @@
+body{
+	background:#e9ebee;
+	color:#545454;
+	font-family: 'Roboto-Regular';
+}
+.fa [class*="fa-"]{
+    color: #888888;
+    &:hover{
+	 color: #ccc;
+    }
+}

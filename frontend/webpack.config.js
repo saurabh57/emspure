@@ -1,10 +1,28 @@
 const path = require('path');
 const srcPath = path.join(__dirname, './app');
+const webpack = require('webpack');
 //We are going to use the ExtractTextPlugin, which moves the generated content into a file.
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = {
 	entry:{
-		app: "./app/main.js"
+		app: "./app/main.js",
+        vendor: [
+            'react',
+            'react-dom',
+            'react-router',
+            'react-router-redux',
+            'redux',
+            'react-redux',
+            'redux-immutable-state-invariant',
+            'react-bootstrap',
+            'material-ui'
+        ],
+        fonts: [
+            './app/styles/lib/font.css'
+        ],
+        globals: [
+            './app/styles/lib/globals.css'
+        ]
 	},
 	output: {
 		path:`${srcPath}/`,
@@ -41,7 +59,8 @@ var config = {
 		new ExtractTextPlugin({
 			  filename: '[name].css',
 			  allChunks: true
-			})
+			}),
+		new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
     ],
 	module:{
 		loaders:[
@@ -55,7 +74,7 @@ var config = {
 			},
 			{
                 test: /\.scss$/,
-                exclude:[/(node_modules|\/app\/styles\/lib)/],
+                exclude:[/lib/],
                 loader: ExtractTextPlugin.extract({
 			      fallbackLoader: 'style-loader',
 			      loader: [
@@ -92,6 +111,22 @@ var config = {
 			      ],
 			    })
             },
+            {
+			    test: /(\.lib|globals|font)\.css$/,
+			 	loader:ExtractTextPlugin.extract({
+			 		fallbackLoader: 'style-loader',
+			 		loader:['css-loader','resolve-url-loader',{
+			            loader: 'postcss-loader',
+			            options: {
+			              plugins: function () {
+			                return [
+			                  require('autoprefixer')
+			                ];
+			              }
+			            }
+			         }]
+			 	})
+			},
             {
 	          test: /\.(gif|jpe?g|png|svg)(\?.*)?$/,
 	          use: [
