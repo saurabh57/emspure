@@ -20,7 +20,7 @@ class ContentLayout extends Component{
 					<ProfileSummaryCard />
 				</div>
 				<div className={styles.contentWrapper}>
-					<div className={`${styles.middleContent} col-sm-6 col-xs-12 col-sm-offset-3`}>
+					<div className={`${styles.middleContent} col-md-6 col-xs-12 col-md-offset-3`}>
 						{this.props.children}
 					</div>
 					<div className={`${styles.rightContent} col-sm-3 col-xs-12`}>
