@@ -11,7 +11,7 @@ import Ribbon from 'components/common/Ribbon';
 //</div>
 
 //<span className={styles.cardTitle}>{this.props.title}</span>
-
+//<Ribbon ribbonHeader={this.props.title} />
 
 class Card extends Component{
 	constructor(props){
@@ -31,9 +31,9 @@ class Card extends Component{
 				<div className={styles.cardContainerss}>
 					<div className={styles.cardContainer}>
 						<div className={styles.cardRibbonContainer}>
-							<Ribbon ribbonHeader={this.props.title} />
-							<span onClick={this.getComponent.bind(this, this.props.title)} className={styles.cardEditButton}>
-								<Icon iconClass="fa-pencil-square-o fa-lg"/>
+							<div className={styles.cardTitle}>{this.props.title}</div>
+							<span onClick={this.getComponent.bind(this, this.props.title)} className={`${styles.customEdit} ${styles.cardEditButton}`}>
+								<Icon iconClass={`fa-pencil fa-lg`}/>
 							</span>
 						</div>
 						<CardComponent {...this.props}/>
