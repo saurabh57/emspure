@@ -5,7 +5,7 @@ body{
 }
 .fa [class*="fa-"]{
     color: #888888;
-    &:hover{
-	 color: #ccc;
-    }
+}
+.fa [class*="fa-"]:hover{
+		color: #ccc;
 }
