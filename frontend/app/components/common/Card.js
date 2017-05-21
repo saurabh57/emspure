@@ -28,16 +28,14 @@ class Card extends Component{
 	render(){
 		const CardComponent = CARD_COMPONENTS[this.props.cardComponent];
 		return (
-				<div className={styles.cardContainerss}>
-					<div className={styles.cardContainer}>
-						<div className={styles.cardRibbonContainer}>
-							<div className={styles.cardTitle}>{this.props.title}</div>
-							<span onClick={this.getComponent.bind(this, this.props.title)} className={`${styles.customEdit} ${styles.cardEditButton}`}>
-								<Icon iconClass={`fa-pencil fa-lg`}/>
-							</span>
-						</div>
-						<CardComponent {...this.props}/>
+				<div className={styles.cardContainer}>
+					<div className={styles.cardRibbonContainer}>
+						<div className={styles.cardTitle}>{this.props.title}</div>
+						<span onClick={this.getComponent.bind(this, this.props.title)} className={`${styles.customEdit} ${styles.cardEditButton}`}>
+							<Icon iconClass={`fa-pencil fa-lg`}/>
+						</span>
 					</div>
+					<CardComponent {...this.props}/>
 				</div>
 			)
 	}

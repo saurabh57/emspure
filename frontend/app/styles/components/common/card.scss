@@ -1,15 +1,10 @@
 @import '../../main';
 :local{
 	.cardContainer{
-	    padding: 10px;
-        background: #fff;
-        position: relative;
-	}
-	.cardContainerss{
 	    margin-top: 10px;
-	    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	    background: #fff;
-	    border-radius: 2px;
+	    padding: 10px;
+	    @include elevation();
 	}
 	.cardRibbonContainer{
 		position: relative;
@@ -18,7 +13,7 @@
 	.cardTitle{
 		border-bottom: 1px solid rgba(128,128,128,0.3);
 	    color: grey;
-	    font-size: 16px;
+	    font-size: $SIZE-LEVEL-4;
 	    font-weight: bold;
 	}
 	.cardEditButton{
@@ -49,7 +44,7 @@
 	.cardShowMore{
 		display: block;
 	    position: relative;
-	    bottom: 0px;
+	    bottom: 0;
 	    border: 0;
 	    width: 100%;
 	    background: #1b92b7;
@@ -58,8 +53,6 @@
 	span.cardEditButton .customedit{
 		padding: 7px !important;
 	}
-
-
 	.cardItems {
 		list-style: none;
 		text-align: center;
@@ -70,14 +63,14 @@
 	}
 	.orgItem {
 		position: relative;
-    display: inline-block;
-    margin: 20px 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #828282;
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px;
+	    display: inline-block;
+	    margin: 20px 10px;
+	    font-size: $SIZE-LEVEL-5;
+	    font-weight: 600;
+	    color: #828282;
+	    border-radius: 5px;
+	    text-align: center;
+	    padding: 10px;
 		cursor: pointer;
 		&:hover{
 				transition: all .2s ease;
@@ -85,17 +78,17 @@
 		}
 	}
 	.orgItemCount {
-    color: #e88d46;
-    margin-left: 4px
+	    color: #e88d46;
+	    margin-left: 4px;
 	}
 	.orgItemName{
-		font-size: 0.9em;
+		font-size: $SIZE-LEVEL-5;
 		position: relative;
 		margin: 5px 0;
 		color: #ababab;
 	}
 	.fs5em {
-		font-size: 3em;
+		font-size: $SIZE-LEVEL-2;
 	}
 	.customEdit{
     	background: white;

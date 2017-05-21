@@ -12,12 +12,12 @@
 	    margin: auto;
 		.buttons{
 		    padding: .5em 0;
-		    font-size: .8em;
+		    font-size: $SIZE-LEVEL-5;
 		    font-weight: 100;
 		}
 		.links{
 		    padding: .5em 0;
-		    font-size: 1em;
+		    font-size: $SIZE-LEVEL-4;
 		    font-weight: 100;
 		    span{
 			    cursor: pointer;

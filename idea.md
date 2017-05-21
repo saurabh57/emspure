@@ -55,6 +55,27 @@
 3. He can perform some action based on his role to org or batch
 
 
+##Refractor
+1. Populate all data from object
+2. make common css classes in global and create mixins
+3. Use rem-calc instead of px or ems
+4. All CSS classes should be changed in scss
+5. include break points
+6. Use variables for border colors, bg, and font colors to support theme down the line
+7. update font awesome
+8. try to create stateless component instead of writing inside stateful class ex-
+9. profile summary card 
+10. Organisation page
+11. Dashboard page (merge profile page)
+12. Basic component for services, Contact Us, message, NOtification, assignment and contents
+13. Create Home page (fantabulous)
+14. Footer
+15. Modal root for all forms
+16. Message Modal box (success, error)
+17. Message box (confirm box, alert, prompt)
+18. comming soon and 404 page
+19. Event box in right side for activities
+
 
 
 
