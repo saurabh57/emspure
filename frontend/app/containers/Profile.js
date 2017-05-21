@@ -5,8 +5,9 @@ class Profile extends Component{
 		super(props);
 	}
 	render(){
+		const {headerLinks} = this.props;
 		return (
-				<ProfileLayout children={this.props.children}/>
+				<ProfileLayout children={this.props.children} headerLinks={headerLinks}/>
 			)
 	}
 }

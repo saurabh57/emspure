@@ -8,11 +8,13 @@ class ProfileLayout extends Component{
 		super(props);
 	}
 	render(){
+		const {headerLinks} = this.props;
+
 		return(
 			<div className={styles.profileLayoutContainer}>
 				<div className={styles.coverWrapper}>
 					<CoverPic />
-					<TabContainer/>
+					<TabContainer headerLinks={headerLinks}/>
 				</div>
 				<div className={`${styles.leftContent} col-sm-3 col-xs-12`}>
 					<ProfileSummaryCard />

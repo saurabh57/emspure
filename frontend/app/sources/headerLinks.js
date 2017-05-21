@@ -10,7 +10,17 @@ const headerLinks = [
 	{
 		displayText: 'Profile',
 		toLink: Routes.profile,
-		role: true
+		role: true,
+		subTab: [
+			{
+				displayText: 'ABOUT',
+				toLink: Routes.profileAbout
+			},
+			{
+				displayText: 'ORGANISATIONS',
+				toLink: Routes.profileOrganization
+			}
+		]
 	},
 	{
 		displayText: 'Services',

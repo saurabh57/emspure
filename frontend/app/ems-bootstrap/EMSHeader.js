@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import styles from 'styles/emsBootstrap/emsHeader';
 import Routes from 'routes';
 import {replaceParamInRoot} from 'utils';
-import { headerLinks } from 'sources';
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
@@ -12,7 +11,7 @@ class EMSHeader extends Component{
 		}
 	}
 	render(){
-		const {user} = this.props;
+		const {user, headerLinks} = this.props;
 		return (
 				<nav className={`navbar navbar-default ${styles.emsheader}`}>
 				  <div className={`container-fluid ${styles.emsheaderContent}`}>
