@@ -10,16 +10,16 @@ class OrganisationUpdateInfo extends Component{
 	render(){
     const { orgNotification } = this.props;
 		return (
-			<div className={styles.orgNotification}>
-				<ul className={styles.cardItems}>
+			<div className={`${styles.orgNotification} row`}>
+				<ul className={`${styles.cardItems} col-xs-12`}>
         {
           orgNotification.map((data, index) => {
             return (
-              <li className={styles.orgItem} key={index}>
+              <li className={`${styles.orgItem} col-xs-6 col-sm-3`} key={index}>
                 <Icon iconClass={`${data.iconClass} ${styles.fs5em}`} />
                 <div className={styles.orgItemName}>
                   <span>{data.displayText}</span>
-                  <span className={styles.orgItemCount}>[ {data.updateCount} ]</span>
+                  <span className={styles.orgItemCount}>{data.updateCount}</span>
                 </div>
               </li>
             );

@@ -8,7 +8,7 @@
 	}
 	.cardRibbonContainer{
 		position: relative;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	.cardTitle{
 		border-bottom: 1px solid rgba(128,128,128,0.3);
@@ -55,32 +55,35 @@
 	}
 	.cardItems {
 		list-style: none;
-		text-align: center;
-		padding-left: 0px;
+	    text-align: center;
+	    margin: 0;
+	    padding: 0;
 	}
 	.orgNotification{
 		margin: auto;
 	}
 	.orgItem {
-		position: relative;
-	    display: inline-block;
-	    margin: 20px 10px;
-	    font-size: $SIZE-LEVEL-5;
-	    font-weight: 600;
 	    color: #828282;
 	    border-radius: 5px;
-	    text-align: center;
-	    padding: 10px;
-		cursor: pointer;
-		font-weight: $WEIGHT_LEVEL_3;
+	    cursor: pointer;
+	    font-weight: $WEIGHT_LEVEL_3;
+        padding-top: 15px;
+    	padding-bottom: 15px;
 		&:hover{
 				transition: all .2s ease;
 				@include elevation();
 		}
 	}
 	.orgItemCount {
-	    color: #e88d46;
-	    margin-left: 4px;
+	    background: #e88d46;
+	    color: white;
+	    border-radius: 10px;
+	    display: inline-block;
+	    width: 20px;
+	    height: 20px;
+	    line-height: 20px;
+	    position: absolute;
+	    top: -15px;
 	}
 	.orgItemName{
 		font-size: $SIZE-LEVEL-5;
