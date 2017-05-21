@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import style from 'styles/components/dashboard';
-import {ProfileLayout} from 'components';
+import {ContentLayout} from 'components';
 class Dashboard extends Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
+		const {headerLinks,route} = this.props;
 		return (
-				<div>Dashboard</div>
+				<ContentLayout children={this.props.children} tabs={headerLinks[route.activeTab]["subTab"]}/>
 			)
 	}
 }

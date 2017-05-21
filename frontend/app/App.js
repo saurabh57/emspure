@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
 import { Provider } from 'react-redux';
-import {Router,Route,IndexRoute,browserHistory} from 'react-router';
+import {Router,Route,IndexRoute,browserHistory,IndexRedirect} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Dashboard,Layout,Profile, Signup, Signin} from 'containers';
 import {About,Organisation} from 'components/tabs';
 import configureStore from 'store/configureStore';
+import {replaceParamInRoot} from 'utils';
 import Routes from 'routes';
 
 const store = configureStore();
@@ -15,14 +16,16 @@ class App extends Component{
 				<Provider store={store}>
 					<Router history={history}>
 						<Route path={Routes.home} component={Layout}>
-							<IndexRoute component={Dashboard} /> 
+							<IndexRedirect to={Routes.signin} /> 
 							<Route path={Routes.signup} component={Signup} />
 							<Route path={Routes.signin} component={Signin} />
-							<Route path={Routes.dashboard} component={Dashboard} /> 
-							<Route path={Routes.profile} component={Profile}>
-								<IndexRoute component={About} />
+							<Route path={Routes.dashboard} component={Dashboard} activeTab="dashboard">
+								<IndexRedirect to={replaceParamInRoot(Routes.dashboardOrganization,'username','user')}/>
+								<Route path={Routes.dashboardOrganization} component={Organisation} />
+							</Route> 
+							<Route path={Routes.profile} component={Profile} activeTab="profile">
+								<IndexRedirect to={replaceParamInRoot(Routes.profileAbout,'username','user')}/>
 								<Route path={Routes.profileAbout} component={About} />
-								<Route path={Routes.profileOrganization} component={Organisation} />
 							</Route>
 						</Route>
 					</Router>

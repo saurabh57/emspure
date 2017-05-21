@@ -39,7 +39,8 @@ class EMSHeader extends Component{
 				      	*/
 				  	  }
 				      {
-				        headerLinks.map((data, index) => {
+				        Object.keys(headerLinks).map((key, index) => {
+				        	const data = Object.assign({},headerLinks[key]);
 				        	return ((data.role && user && user.id) || !data.role) && (
 				        		<li key={index}>
 				        			<Link
