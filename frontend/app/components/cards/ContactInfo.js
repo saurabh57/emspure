@@ -12,9 +12,9 @@ class ContactInfo extends Component{
 				<div>
 					<ul className={styles.cardText}>
 						<ul className={styles.cardText}>
-							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="envelope-o fa-lg"/></span><span>arvindsinghnitp@gmail.com</span></li>
-							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="mobile fa-lg"/></span><span>9591193914</span></li>
-							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="location-arrow fa-lg"/></span><span>Pragath layout, bangalore, 560037</span></li>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="fa-envelope-o fa-lg"/></span><span>arvindsinghnitp@gmail.com</span></li>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="fa-mobile fa-lg"/></span><span>9591193914</span></li>
+							<li className={styles.textBlock}><span className={styles.cardLabelIcon}><Icon iconClass="fa-location-arrow fa-lg"/></span><span>Pragath layout, bangalore, 560037</span></li>
 						</ul>
 					</ul>
 				</div>
