@@ -5,6 +5,7 @@ import ModuleTitle from './common/ModuleTitle';
 import CoverPic from './common/CoverPic';
 import ProfilePic from './common/CoverPic';
 import Card from './common/Card';
+import Modal from './common/Modal';
 
 module.exports = {
 	Header,
@@ -12,5 +13,7 @@ module.exports = {
 	ContentLayout,
 	ModuleTitle,
 	CoverPic,
-	ProfilePic
+	ProfilePic,
+	Card,
+	Modal
 }

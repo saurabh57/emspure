@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Header,Footer} from 'components';
+import {Header,Footer,Modal} from 'components';
 import style from "styles/components/layout";
 import { connect } from 'react-redux';
 import { headerLinks } from 'sources';
@@ -10,7 +10,7 @@ class Layout extends Component{
 		super(props);
 	}
 	render(){
-		const {user} = this.props;
+		const {user, modal, dispatch} = this.props;
 
 		return (
 			<div>
@@ -19,6 +19,7 @@ class Layout extends Component{
 					{renderChildren(this.props.children,{headerLinks})}
 				</div>
 				<Footer />
+				<Modal modal={modal} dispatch={dispatch} />
 			</div>
 		);
 	}
@@ -26,12 +27,14 @@ class Layout extends Component{
 
 function mapStateToProps(state) {
 	return {
-		user: state.user
+		user: state.user,
+		modal: state.modal
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
+		dispatch
 	}
 }
 

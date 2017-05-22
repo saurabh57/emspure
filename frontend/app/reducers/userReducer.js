@@ -1,5 +1,5 @@
 import {UserDefault} from 'sources';
-import {LOGGED_IN} from 'constants/user';
+import {LOGGED_IN} from 'constants';
 
 export default function userReducer(state = UserDefault, action){
 	switch (action.type) {

@@ -9,12 +9,13 @@ class Organisation extends Component{
 		super(props);
 	}
 	render(){
+		const { dispatch } = this.props;
 		const organisations = OrganisationDefault;
 		return (
 				<div className={styles.organisation}>
 				{
 					organisations.map((data, index) => {
-						return <Card key={index} title={data.orgName} cardComponent="OrganisationUpdateInfo" {...data} />
+						return <Card key={index} title={data.orgName} dispatch={dispatch} cardComponent="OrganisationUpdateInfo" {...data} />
 					})
 				}
 				</div>
