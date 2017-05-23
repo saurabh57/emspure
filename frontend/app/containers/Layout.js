@@ -19,7 +19,7 @@ class Layout extends Component{
 					{renderChildren(this.props.children,{headerLinks})}
 				</div>
 				<Footer />
-				<Modal modal={modal} dispatch={dispatch} />
+				<Modal {...modal} dispatch={dispatch} />
 			</div>
 		);
 	}

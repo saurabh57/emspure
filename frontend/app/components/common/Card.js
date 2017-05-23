@@ -14,12 +14,30 @@ class Card extends Component{
 			contactDetailEditMode: false
 		};
 		this.handleEditClick = this.handleEditClick.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
 	handleEditClick(){
 		const {dispatch} = this.props;
+		// dispatch(showModal({
+		// 	modalType:'confirm',
+		// 	modalComponent:'TestModal',
+		// 	modalProps:{
+		// 		text:"Are you sure?"
+		// 	}
+		// }));
+
 		dispatch(showModal({
-			modalType:'success'
-		}))
+			modalType:'modal',
+			modalComponent:'TestModal',
+			modalProps:{
+				text:"Are you sure?",
+				title:"Edit Personal Info",
+				onSubmit:this.onSubmit
+			}
+		}));
+	}
+	onSubmit(){
+		console.log("clicked submit");
 	}
 	render(){
 		const CardComponent = CARD_COMPONENTS[this.props.cardComponent];

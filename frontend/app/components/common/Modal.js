@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Dialog,FlatButton} from 'material-ui';
+import {Dialog,FlatButton,RaisedButton} from 'material-ui';
+import {renderChildren} from 'utils';
 
 import * as MODAL_COMPONENTS from 'components/modals';
 import {hideModal} from 'actions/modalAction';
@@ -7,43 +8,79 @@ import {hideModal} from 'actions/modalAction';
 class Modal extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			open: false,
-		}
+		const _this = this;
+		const { modalProps } = this.props;
 		this.handleClose = this.handleClose.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+
+		this.state = {
+			defaultConfig: {
+				'confirm': {
+					"modal": false,
+					"actions": [
+					      <FlatButton
+					        label="Cancel"
+					        primary={true}
+					        onTouchTap={this.handleClose}
+					      />,
+					      <FlatButton
+					        label="Submit"
+					        primary={true}
+					        disabled={false}
+					        onTouchTap={this.handleSubmit}
+					      />
+				    ],
+				},
+				'modal': {
+					modal: true,
+					"actions": [
+					      <FlatButton
+					        label="Cancel"
+					        primary={true}
+					        onTouchTap={this.handleClose}
+					      />,
+					      <FlatButton
+					        label="Submit"
+					        primary={true}
+					        disabled={false}
+					        onTouchTap={this.handleSubmit}
+					      />
+				    ]
+				}
+			}
+		}
 	}
 	handleClose() {
 		const { dispatch } = this.props;
 		dispatch(hideModal());
-	};
+	}
+	handleSubmit() {
+		const { modalProps } = this.props;
+		modalProps.onSubmit && modalProps.onSubmit();
+		this.handleClose();
+	}
 	render(){
-		const { modal } = this.props;
-		let open = modal.modalType === null ? false : true;
-		const ModalComponent = MODAL_COMPONENTS[this.props.modalComponent] || null;
-	    const actions = [
-	      <FlatButton
-	        label="Cancel"
-	        primary={true}
-	        onTouchTap={this.handleClose}
-	      />,
-	      <FlatButton
-	        label="Submit"
-	        primary={true}
-	        disabled={true}
-	        onTouchTap={this.handleClose}
-	      />,
-	    ];
+		const { modalType , modalProps , modalComponent } = this.props;
+		if(modalType === null) {
+			return null;
+		}
+		
+		const ModalComponent = MODAL_COMPONENTS[modalComponent] || DefaultComponent ;
 
 		return (
 			        <Dialog
-			          title="Dialog With Actions"
-			          actions={actions}
-			          modal={true}
-			          open={open}
-			        >
-			          Only actions can close this dialog.
+				          title={modalProps.title || null}
+				          actions={this.state.defaultConfig[modalType]["actions"]}
+				          modal={this.state.defaultConfig[modalType]["modal"] || false}	
+				          onRequestClose={this.handleClose}
+				          autoScrollBodyContent={true}
+				          open={true}>
+							<ModalComponent {...modalProps} />
 			        </Dialog>
 			)
 	}
+}
+const DefaultComponent = (props) => {
+	return <span>{props.text}</span>
 }
 export default Modal;

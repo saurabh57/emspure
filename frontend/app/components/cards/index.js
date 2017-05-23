@@ -1,7 +1,7 @@
-import {default as PersonalInfo} from './PersonalInfo';
-import {default as EducationInfo} from './EducationInfo';
-import {default as ContactInfo} from './ContactInfo';
-import {default as OrganisationUpdateInfo} from './OrganisationUpdateInfo';
+import PersonalInfo from './PersonalInfo';
+import EducationInfo from './EducationInfo';
+import ContactInfo from './ContactInfo';
+import OrganisationUpdateInfo from './OrganisationUpdateInfo';
 
 module.exports = {
 	PersonalInfo,

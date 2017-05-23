@@ -1,4 +1,5 @@
-//import {default as PersonalInfo} from './PersonalInfo';
-module.exports = {
+import TestModal from './TestModal';
 
+module.exports = {
+	TestModal
 }
