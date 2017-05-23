@@ -8,11 +8,6 @@ import {showModal} from 'actions/modalAction';
 class Card extends Component{
 	constructor(props){
 		super(props);
-		this.state = {
-		    personalDetailEditMode: false,
-			educationDetailEditMode: false,
-			contactDetailEditMode: false
-		};
 		this.handleEditClick = this.handleEditClick.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}

@@ -8,11 +8,12 @@ class About extends Component{
 		super(props);
 	}
 	render(){
+		const { dispatch } = this.props;
 		return (
 				<div className={styles.about}>
-					<Card title="Personal Info" cardComponent="PersonalInfo" />
-					<Card title="Education Info" cardComponent="EducationInfo" />
-					<Card title="Contact Info" cardComponent="ContactInfo" />
+					<Card title="Personal Info" cardComponent="PersonalInfo" dispatch={dispatch} />
+					<Card title="Education Info" cardComponent="EducationInfo" dispatch={dispatch} />
+					<Card title="Contact Info" cardComponent="ContactInfo" dispatch={dispatch} />
 				</div>
 			)
 	}

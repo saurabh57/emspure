@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 import * as actions from 'actions/user';
 
 class Signin extends Component{
-	// email id
-	// password
-	// forgot password
 	constructor(props){
 		super(props);
 	}
@@ -29,6 +26,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+		dispatch,
 		login: (user) => {
 			actions.login(dispatch,user);
 		}

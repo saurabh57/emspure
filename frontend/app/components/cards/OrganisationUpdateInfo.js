@@ -1,7 +1,10 @@
 //Creating Footer
 import React,{Component} from 'react';
+import { FlatButton , FontIcon } from 'material-ui';
+import { Link } from 'react-router';
 import styles from 'styles/components/common/card';
 import Icon from 'components/common/Icon';
+import Routes from 'routes'
 
 class OrganisationUpdateInfo extends Component{
 	constructor(props){
@@ -26,6 +29,7 @@ class OrganisationUpdateInfo extends Component{
           })
         }
 				</ul>
+        <div className={`col-xs-12 text-right`}><Link to={Routes.signin}><FlatButton primary={true} label="VIEW" labelPosition="before"  icon={<FontIcon style={{'font-size':'16px'}} className="fa fa-arrow-right" />}/></Link></div>
 			</div>
 		);
 	}
