@@ -12,7 +12,9 @@ class Modal extends Component {
 		const { modalProps } = this.props;
 		this.handleClose = this.handleClose.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-
+		const style = {
+			'marginLeft':'10px'
+		}
 		this.state = {
 			defaultConfig: {
 				'confirm': {
@@ -20,13 +22,16 @@ class Modal extends Component {
 					"actions": [
 					      <FlatButton
 					        label="Cancel"
-					        primary={true}
+					        disableTouchRipple={true}
+					        style={style}
 					        onTouchTap={this.handleClose}
 					      />,
-					      <FlatButton
+					      <RaisedButton
 					        label="Submit"
 					        primary={true}
 					        disabled={false}
+					        disableTouchRipple={true}
+					        style={style}
 					        onTouchTap={this.handleSubmit}
 					      />
 				    ],
@@ -36,13 +41,16 @@ class Modal extends Component {
 					"actions": [
 					      <FlatButton
 					        label="Cancel"
-					        primary={true}
+					        disableTouchRipple={true}
+					        style={style}
 					        onTouchTap={this.handleClose}
 					      />,
-					      <FlatButton
+					      <RaisedButton
 					        label="Submit"
 					        primary={true}
 					        disabled={false}
+					        disableTouchRipple={true}
+					        style={style}
 					        onTouchTap={this.handleSubmit}
 					      />
 				    ]
@@ -61,20 +69,17 @@ class Modal extends Component {
 	}
 	render(){
 		const { modalType , modalProps , modalComponent } = this.props;
-		if(modalType === null) {
-			return null;
-		}
 		
 		const ModalComponent = MODAL_COMPONENTS[modalComponent] || DefaultComponent ;
 
 		return (
 			        <Dialog
 				          title={modalProps.title || null}
-				          actions={this.state.defaultConfig[modalType]["actions"]}
-				          modal={this.state.defaultConfig[modalType]["modal"] || false}	
+				          actions={modalType && this.state.defaultConfig[modalType]["actions"]}
+				          modal={modalType && this.state.defaultConfig[modalType]["modal"] || false}	
 				          onRequestClose={this.handleClose}
 				          autoScrollBodyContent={true}
-				          open={true}>
+				          open={modalType !== null}>
 							<ModalComponent {...modalProps} />
 			        </Dialog>
 			)

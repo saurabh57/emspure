@@ -29,7 +29,7 @@ class OrganisationUpdateInfo extends Component{
           })
         }
 				</ul>
-        <div className={`col-xs-12 text-right`}><Link to={Routes.signin}><FlatButton primary={true} label="VIEW" labelPosition="before"  icon={<FontIcon style={{'font-size':'16px'}} className="fa fa-arrow-right" />}/></Link></div>
+        <div className={`col-xs-12 text-right`}><Link to={Routes.signin}><FlatButton primary={true} disableTouchRipple={true} label="VIEW" labelPosition="before"  icon={<FontIcon style={{'fontSize':'16px'}} className="fa fa-arrow-right" />}/></Link></div>
 			</div>
 		);
 	}
