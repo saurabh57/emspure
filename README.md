@@ -1,2 +1,2 @@
 # emspure
-Education Management System 
+EMS
