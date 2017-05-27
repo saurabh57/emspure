@@ -1,4 +1,4 @@
-import {LOGGED_IN} from 'constants/user';
+import {LOGGED_IN} from 'constants';
 
 export function login(dispatch, user) {
 	const userData = {id: 1, name: 'Surya'};

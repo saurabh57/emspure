@@ -3,27 +3,36 @@ import styles from 'styles/components/common/card';
 import * as CARD_COMPONENTS from 'components/cards';
 import Icon from 'components/common/Icon';
 import Ribbon from 'components/common/Ribbon';
-//import EMSButton from 'components/ems-bootstrap/EMSButton';
-//<li><Icon iconClass="pencil-square-o"/></li>
-//<div>
-	//<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Cancel</button>
-	//<button type="button" className={`${styles.btnDefault} btnDefault btn btn-default`}>Save</button>
-//</div>
-
-//<span className={styles.cardTitle}>{this.props.title}</span>
-//<Ribbon ribbonHeader={this.props.title} />
+import {showModal} from 'actions/modalAction';
 
 class Card extends Component{
 	constructor(props){
 		super(props);
-		this.state = {
-		    personalDetailEditMode: false,
-			educationDetailEditMode: false,
-			contactDetailEditMode: false
-		};
+		this.handleEditClick = this.handleEditClick.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 	}
-	getComponent(title) {
-		console.log(title);
+	handleEditClick(){
+		const {dispatch} = this.props;
+		// dispatch(showModal({
+		// 	modalType:'confirm',
+		// 	modalComponent:'TestModal',
+		// 	modalProps:{
+		// 		text:"Are you sure?"
+		// 	}
+		// }));
+
+		dispatch(showModal({
+			modalType:'modal',
+			modalComponent:'TestModal',
+			modalProps:{
+				text:"Are you sure?",
+				title:"Edit Personal Info",
+				onSubmit:this.onSubmit
+			}
+		}));
+	}
+	onSubmit(){
+		console.log("clicked submit");
 	}
 	render(){
 		const CardComponent = CARD_COMPONENTS[this.props.cardComponent];
@@ -31,7 +40,7 @@ class Card extends Component{
 				<div className={styles.cardContainer}>
 					<div className={styles.cardRibbonContainer}>
 						<div className={styles.cardTitle}>{this.props.title}</div>
-						<span onClick={this.getComponent.bind(this, this.props.title)} className={`${styles.customEdit} ${styles.cardEditButton}`}>
+						<span onClick={this.handleEditClick} className={`${styles.customEdit} ${styles.cardEditButton}`}>
 							<Icon iconClass={`fa-pencil fa-lg`}/>
 						</span>
 					</div>

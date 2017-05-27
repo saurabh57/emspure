@@ -1,15 +1,8 @@
 import React,{Component} from 'react';
 import {EMSSignup} from 'materialUIComponent';
+import { connect } from 'react-redux';
 import {ModuleTitle} from 'components';
-// first name
-// middle name
-// last name
-// email id
-// dob
-// sex
-// phone number
-// password
-// confirm password
+
 class Signup extends Component{
 	constructor(props){
 		super(props);
@@ -24,4 +17,15 @@ class Signup extends Component{
 	}
 }
 
-export default Signup; 
+const mapStateToProps = (state) => {
+	return {
+
+	}
+};
+const mapDispatchToProps = (dispatch) => {
+	return {
+		dispatch
+	}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup); 

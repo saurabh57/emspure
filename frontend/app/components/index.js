@@ -1,16 +1,19 @@
 import Header from './Header';
 import Footer from './Footer';
-import ProfileLayout from './ProfileLayout';
+import ContentLayout from './ContentLayout';
 import ModuleTitle from './common/ModuleTitle';
 import CoverPic from './common/CoverPic';
 import ProfilePic from './common/CoverPic';
 import Card from './common/Card';
+import Modal from './common/Modal';
 
 module.exports = {
 	Header,
 	Footer,
-	ProfileLayout,
+	ContentLayout,
 	ModuleTitle,
 	CoverPic,
-	ProfilePic
+	ProfilePic,
+	Card,
+	Modal
 }

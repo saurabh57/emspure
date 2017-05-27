@@ -1,6 +1,6 @@
 @import '../main';
 :local{
-	.profileLayoutContainer{
+	.contentLayoutContainer{
 		position:relative;
 		.leftContent{
 			position: absolute;
@@ -14,7 +14,7 @@
 			position: absolute;
 		}
 	}
-	.profileWrapper{
+	.contentWrapper{
 		position:relative;
 	}
 	.coverWrapper {

@@ -11,11 +11,15 @@ class TabContainer extends Component{
 		}
 	}
 	render(){
+		const {tabs} = this.props;
 		return(
 				<div className={`${styles.tabContainer}`}>
 					<ul className={`nav ${styles.navTabs} col-sm-6 col-xs-12 col-sm-offset-3`}>
-  						<li role="presentation"><Link activeClassName={styles.active} to={replaceParamInRoot(Routes.profileAbout,'username','user')}>About</Link></li>
-						<li role="presentation"><Link activeClassName={styles.active} to={replaceParamInRoot(Routes.profileOrganization,'username','user')}>Organisations</Link></li>
+						{
+							tabs.map((item,index) => {
+								return <li key={index} role="presentation"><Link activeClassName={styles.active} to={replaceParamInRoot(item.toLink,'username','user')}>{item.displayText}</Link></li>
+							})
+						}
 					</ul>
 				</div>
 

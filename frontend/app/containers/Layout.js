@@ -1,21 +1,25 @@
 import React,{Component} from 'react';
-import {Header,Footer} from 'components';
+import {Header,Footer,Modal} from 'components';
 import style from "styles/components/layout";
 import { connect } from 'react-redux';
+import { headerLinks } from 'sources';
+import {renderChildren} from 'utils';
 
 class Layout extends Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
-		const {user} = this.props;
+		const {user, modal, dispatch} = this.props;
+
 		return (
 			<div>
-				<Header user={user}/>
+				<Header user={user} headerLinks={headerLinks}/>
 				<div className={`${style.mainContainer}`}>
-					{this.props.children}
+					{renderChildren(this.props.children,{headerLinks})}
 				</div>
 				<Footer />
+				<Modal {...modal} dispatch={dispatch} />
 			</div>
 		);
 	}
@@ -23,12 +27,14 @@ class Layout extends Component{
 
 function mapStateToProps(state) {
 	return {
-		user: state.user
+		user: state.user,
+		modal: state.modal
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
+		dispatch
 	}
 }
 

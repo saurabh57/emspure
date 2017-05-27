@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import styles from 'styles/emsBootstrap/emsHeader';
 import Routes from 'routes';
 import {replaceParamInRoot} from 'utils';
-import { headerLinks } from 'sources';
 import MenuItemsDropdown from 'components/common/MenuItemsDropdown';
 
 class EMSHeader extends Component{
@@ -14,7 +13,7 @@ class EMSHeader extends Component{
 		}
 	}
 	render(){
-		const {user} = this.props;
+		const {user, headerLinks} = this.props;
 		return (
 				<nav className={`navbar navbar-default ${styles.emsheader}`}>
 				  <div className={`container-fluid ${styles.emsheaderContent}`}>
@@ -37,7 +36,8 @@ class EMSHeader extends Component{
 				      </form>
   				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
 				      {
-				        headerLinks.map((data, index) => {
+				        Object.keys(headerLinks).map((key, index) => {
+				        	const data = Object.assign({},headerLinks[key]);
 				        	return ((data.role && user && user.id) || !data.role) && (
 				        		<li key={index}>
 				        			<Link
@@ -58,7 +58,7 @@ class EMSHeader extends Component{
 					      </ul>
 							}
 				      { user && user.id &&
-								<MenuItemsDropdown itemList={headerLinks[1].subLinks} user={user} />
+								<MenuItemsDropdown itemList={headerLinks.profile.subLinks} user={user} />
 							}
 				    </div>
 				  </div>

@@ -63,7 +63,7 @@
 5. include break points
 6. Use variables for border colors, bg, and font colors to support theme down the line
 7. update font awesome
-8. try to create stateless component instead of writing inside stateful class ex-
+8. try to create stateless component instead of writing inside stateful class
 9. profile summary card 
 10. Organisation page
 11. Dashboard page (merge profile page)

@@ -5,7 +5,7 @@ const SIGNIN = `/signin`;
 const DASHBOARD = `/dashboard`;
 const PROFILE = `/:username`;
 const PROFILE_ABOUT = `/:username/about`;
-const PROFILE_ORGANIZATION = `/:username/organization`;
+const DASHBOARD_ORGANIZATION = `/:username/organization`;
 const DEFAULT = `${PROFILE}`;
 const SERVICES = `/services`;
 const CONTACTUS = `/contact-us`;
@@ -18,7 +18,7 @@ const ROUTER_MASTER = {
 	dashboard:DASHBOARD,
 	profile:PROFILE,
 	profileAbout:PROFILE_ABOUT,
-	profileOrganization:PROFILE_ORGANIZATION,
+	dashboardOrganization:DASHBOARD_ORGANIZATION,
 	services:SERVICES,
 	contactUs:CONTACTUS
 }

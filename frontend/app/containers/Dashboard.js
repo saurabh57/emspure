@@ -1,15 +1,30 @@
 import React,{Component} from 'react';
+import { connect } from 'react-redux';
 import style from 'styles/components/dashboard';
-import {ProfileLayout} from 'components';
+import {ContentLayout} from 'components';
+
 class Dashboard extends Component{
 	constructor(props){
 		super(props);
 	}
 	render(){
+		const {headerLinks, route, dispatch} = this.props;
 		return (
-				<div>Dashboard</div>
+				<ContentLayout dispatch={dispatch} children={this.props.children} tabs={headerLinks[route.activeTab]["subTab"]}/>
 			)
 	}
 }
 
-export default Dashboard; 
+function mapStateToProps(state) {
+	return {
+	
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		dispatch
+	}
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);
