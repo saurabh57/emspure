@@ -10,7 +10,19 @@ const headerLinks = [
 	{
 		displayText: 'Profile',
 		toLink: Routes.profile,
-		role: true
+		role: true,
+		subLinks: [
+			{
+				displayText: 'Profile',
+				toLink: Routes.profile,
+				iconClass: 'fa-code',
+			},
+			{
+				displayText: 'Logout',
+				toLink: Routes.signin,
+				iconClass: 'fa-code',
+			}
+		]
 	},
 	{
 		displayText: 'Services',

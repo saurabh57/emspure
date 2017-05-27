@@ -4,6 +4,8 @@ import styles from 'styles/emsBootstrap/emsHeader';
 import Routes from 'routes';
 import {replaceParamInRoot} from 'utils';
 import { headerLinks } from 'sources';
+import MenuItemsDropdown from 'components/common/MenuItemsDropdown';
+
 class EMSHeader extends Component{
 	constructor(props){
 		super(props);
@@ -34,11 +36,6 @@ class EMSHeader extends Component{
 				        <button type="submit" className="btn btn-default">Submit</button>
 				      </form>
   				      <ul className={`nav navbar-nav ${styles.headerTabs}`}>
-				      { /*
-				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={Routes.dashboard}>Dashboard</Link></li>
-				        <li><Link activeClassName={styles.active} className={styles.headerTabLink} to={replaceParamInRoot(Routes.profile,'username','user')}>Profile</Link></li>
-				      	*/
-				  	  }
 				      {
 				        headerLinks.map((data, index) => {
 				        	return ((data.role && user && user.id) || !data.role) && (
@@ -55,9 +52,14 @@ class EMSHeader extends Component{
 				        })
 				      }
 				      </ul>
-				      <ul className={`nav navbar-nav navbar-right`}>
-				        <li><Link className={styles.headerNavLink} to={Routes.signin}>Log In</Link></li>
-				      </ul>
+							{ !(user && user.id) &&
+								<ul className={`nav navbar-nav navbar-right`}>
+					        <li><Link className={styles.headerNavLink} to={Routes.signin}>Sign In | Sign Up</Link></li>
+					      </ul>
+							}
+				      { user && user.id &&
+								<MenuItemsDropdown itemList={headerLinks[1].subLinks} user={user} />
+							}
 				    </div>
 				  </div>
 				</nav>

@@ -6,29 +6,29 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = {
 	entry:{
 		app: "./app/main.js",
-        vendor: [
-            'react',
-            'react-dom',
-            'react-router',
-            'react-router-redux',
-            'redux',
-            'react-redux',
-            'redux-immutable-state-invariant',
-            'react-bootstrap',
-            'material-ui'
-        ],
-        fonts: [
-            './app/styles/lib/font.css'
-        ],
-        globals: [
-            './app/styles/lib/globals.css'
-        ]
+    vendor: [
+        'react',
+        'react-dom',
+        'react-router',
+        'react-router-redux',
+        'redux',
+        'react-redux',
+        'redux-immutable-state-invariant',
+        'react-bootstrap',
+        'material-ui'
+    ],
+    fonts: [
+        './app/styles/lib/font.css'
+    ],
+    globals: [
+        './app/styles/lib/globals.css'
+    ]
 	},
 	output: {
 		path:`${srcPath}/`,
 		filename:"[name].js"
 	},
-   	resolve: {
+  resolve: {
      extensions: ['.js', '.jsx','.scss','.css'],
      alias: {
        components: `${srcPath}/components`,
@@ -46,8 +46,8 @@ var config = {
        constants:`${srcPath}/constants`,
        actions:`${srcPath}/actions`,
      }
-   },
-    devtool: "source-map", // any "source-map"-like devtool is possible
+		 },
+  devtool: "source-map", // any "source-map"-like devtool is possible
 	devServer:{
 		contentBase: './',
 		hot: true,
@@ -73,9 +73,9 @@ var config = {
 				}
 			},
 			{
-                test: /\.scss$/,
-                exclude:[/lib/],
-                loader: ExtractTextPlugin.extract({
+            test: /\.scss$/,
+            exclude:[/lib/],
+            loader: ExtractTextPlugin.extract({
 			      fallbackLoader: 'style-loader',
 			      loader: [
 			        {
