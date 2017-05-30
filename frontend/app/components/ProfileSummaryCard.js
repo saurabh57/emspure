@@ -28,7 +28,7 @@ class ProfileSummaryCard extends Component{
 
 	render(){
 		return(
-			<div className={styles.profileSummaryCard} style={this.state.styleScroll}>
+			<div className={`${styles.profileSummaryCard} row`} style={this.state.styleScroll}>
 				<ProfilePic />
 				<BasicInfo />
 			</div>
@@ -38,9 +38,17 @@ class ProfileSummaryCard extends Component{
 
 const BasicInfo = () =>{
 	return(
-		<ul className={styles.infoContainer}>
-			<li>Saurabh Panday</li>
-		</ul>
+		<div className={`${styles.infoContainerWrapper} col-xs-9 col-sm-12`}>
+			<ul className={styles.infoContainer}>
+				<li>Arvind Singh</li>
+				<li className={styles.infoContainerHeader}>ABOUT</li>
+				<li className={styles.infoContainerContent}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+				<li className={styles.infoContainerFooter}>Read More</li>
+				<hr />
+				<li><span>ORGANISATIONS</span><span className={styles.infoContainerValue}>10</span></li>
+				<li><span>CONTENTS</span><span className={styles.infoContainerValue}>25</span></li>
+			</ul>
+		</div>
 	)
 } 
 

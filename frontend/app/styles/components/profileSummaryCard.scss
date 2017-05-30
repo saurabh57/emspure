@@ -3,16 +3,41 @@
 	.profileSummaryCard{
 	    position: relative;
 	    width: 100%;
-	    padding: 6%;
-	    max-width: 220px;
 	    background: #fff;
 	    margin: auto;
 	    top: -10em;
 	    @include elevation();
+	    font-size: $SIZE-LEVEL-5;
+
+	    @media screen and (min-width: 768px) {
+		    max-width: 220px;
+		}
+
+		@media screen and (max-width: 768px) {
+		    top: -20em;
+		}
 	    
 	    .infoContainer{
 	    	list-style-type: none;
-    	    padding: 0.5em .4em;
+    	    padding: 0.7em 0.7em;
+	    }
+
+	    .infoContainerHeader{
+	    	font-weight: 700;
+    		padding: 0.4em 0 0.1em 0;
+	    }
+
+	    .infoContainerContent{
+	    	font-size: $SIZE-LEVEL-5;
+	    }
+
+	    .infoContainerFooter{
+	    	font-size: 10px;
+    		padding: 0.4em 0 0.1em 0;
+	    }
+
+	    .infoContainerValue{
+	    	float: right;
 	    }
 	}
 }
