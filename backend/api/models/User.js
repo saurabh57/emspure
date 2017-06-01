@@ -32,7 +32,8 @@ module.exports = {
   	},
   	userName: {
   		type: 'string',
-  		size: 20
+  		size: 20,
+      unique: true
   	},
     profilePic: {
       type: 'string',
@@ -45,12 +46,10 @@ module.exports = {
   	email: {
   		type: 'email',
   		size: 30,
-  		unique: true
   	},
   	mobile: {
   		type: 'number',
   		size: 10,
-
   	},
   	password: {
   		type: 'string',
@@ -84,10 +83,9 @@ module.exports = {
   },
 
   toJSON: function(data){
-	delete data.password;
-	return data;
+	  delete data.password;
+    return data;
   }
 
 
 };
-
