@@ -16,7 +16,7 @@ module.exports = {
     parent_id: {
       type: 'string',
       size: 20
-    }
+    },
   	firstName: {
   		type: 'string',
   		required: true,
@@ -35,13 +35,13 @@ module.exports = {
   		size: 20,
       unique: true
   	},
-    profilePic: {
+    profileImage: {
       type: 'string',
-      size: 20
+      size: 50
     },
-    coverPic: {
+    coverImage: {
       type: 'string',
-      size: 20
+      size: 50
     },
   	email: {
   		type: 'email',

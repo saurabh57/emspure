@@ -45,6 +45,7 @@ var config = {
        utils:`${srcPath}/utils`,
        constants:`${srcPath}/constants`,
        actions:`${srcPath}/actions`,
+       config:`${srcPath}/config`,
      }
 		 },
   devtool: "source-map", // any "source-map"-like devtool is possible

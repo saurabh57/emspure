@@ -11,19 +11,23 @@ function UserController(){
 
 	this.signin = function(req,res) {
 		var resObj = {}, user = {
-			email: req.body.email,
-			password: req.body.password
+			email: req.body.email || 'ss@gmail.com',
+			password: req.body.password || 'ss'
 		};
 
 		User.findOne(user).exec(function(err, data){
 			if(err){
-				console.log('[user in error]',err);
-				resObj.status = statusCode[400].messageKey;
+				resObj.statusCode = 400;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.error = err;
 			} else if(data){
-				resObj.status = statusCode[200].messageKey;
-				console.log(data);
+				resObj.statusCode = 200;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.response = User.toJSON(data);
 			}
-
+			console.log(resObj)
 			res.send(resObj);
 		});
 	},
