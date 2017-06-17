@@ -19,12 +19,21 @@
 	    
 	    .infoContainer{
 	    	list-style-type: none;
-    	    padding: 0.7em 0.7em;
+    	    padding: 0;
+    	    hr {
+    	    	margin-top: 10px;
+    	    	margin-bottom: 10px;
+    	    }
 	    }
 
 	    .infoContainerHeader{
 	    	font-weight: 700;
     		padding: 0.4em 0 0.1em 0;
+    		font-size: $SIZE-LEVEL-4;
+	    }
+
+	    .infoContainerSubHeader{
+	    	font-size: $SIZE-LEVEL-5;
 	    }
 
 	    .infoContainerContent{
@@ -38,6 +47,10 @@
 
 	    .infoContainerValue{
 	    	float: right;
+	    }
+
+	    .infoContainerHeader{
+
 	    }
 	}
 }

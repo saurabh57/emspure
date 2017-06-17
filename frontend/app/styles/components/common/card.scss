@@ -17,9 +17,6 @@
 	    font-weight: bold;
 	    padding-bottom:5px;
 	}
-	.cardEditButton{
-		float: right;
-	}
 	.btnDefault{
 		background-color: #00BCD4;
 	    color: white;
@@ -71,8 +68,8 @@
         padding-top: 15px;
     	padding-bottom: 15px;
 		&:hover{
-				transition: all .2s ease;
-				@include elevation();
+			transition: all .2s ease;
+			@include elevation();
 		}
 	}
 	.orgItemCount {
@@ -80,24 +77,24 @@
 	    color: white;
 	    border-radius: 10px;
 	    display: inline-block;
-	    width: 20px;
-	    height: 20px;
-	    line-height: 20px;
-	    position: absolute;
-	    top: -15px;
+	    width: 15px;
+	    height: 15px;
+	    line-height: 15px;
+	    position: relative;
+	    top: -8px;
+	    font-size: 10px;
 	}
 	.orgItemName{
 		font-size: $SIZE-LEVEL-5;
 		position: relative;
 		margin: 5px 0;
 		color: #ababab;
+    	white-space: nowrap;
 	}
 	.fs5em {
 		font-size: $SIZE-LEVEL-2;
 	}
 	.customEdit{
-    	background: white;
-	    border-radius: 50%;
 	    color: rgba(128, 128, 128, 1);
 	    width: rem-calc(50);
 	    height: rem-calc(50);
@@ -105,16 +102,25 @@
 	    vertical-align: middle;
 	    line-height: rem-calc(50);
 	    cursor: pointer;
-	    position: relative;
 	    right: 10px;
-	    transform: translateY(-50%);
-	    border: 1px solid rgba(128, 128, 128, 0.3);
 	    @include transition();
+	}
+	.cardEditButton{
+		position: relative;
+		float: right;
+		background: white;
+	    border-radius: 50%;
+	    border: 1px solid rgba(128, 128, 128, 0.3);
+	    transform: translateY(-50%);
 	    &:hover{
 	    	background: rgba(128, 128, 128, 1);
 	    	color: white;
 	    	border: 1px solid rgba(128, 128, 128, 1);
 	    }
 	}
-
+	.topRightEditButton{
+		position: absolute;
+		top: 7px;
+		color: white;
+	}
 }

@@ -1,6 +1,8 @@
 import React , {Component} from 'react';
 import ProfilePic from './common/ProfilePic';
-import styles from 'styles/components/profileSummaryCard'
+import styles from 'styles/components/profileSummaryCard';
+import { UserDefault } from 'sources';
+
 class ProfileSummaryCard extends Component{
 	constructor(props){
 		super(props);
@@ -27,26 +29,28 @@ class ProfileSummaryCard extends Component{
 	};
 
 	render(){
+		const UserDefault = UserDefault;
 		return(
 			<div className={`${styles.profileSummaryCard} row`} style={this.state.styleScroll}>
 				<ProfilePic />
-				<BasicInfo />
+				<BasicInfo userProps={UserDefault} />
 			</div>
 		)
 	}
 }
 
 const BasicInfo = () =>{
+	const userProps = UserDefault;
 	return(
 		<div className={`${styles.infoContainerWrapper} col-xs-9 col-sm-12`}>
 			<ul className={styles.infoContainer}>
-				<li>Arvind Singh</li>
-				<li className={styles.infoContainerHeader}>ABOUT</li>
-				<li className={styles.infoContainerContent}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</li>
+				<li className={styles.infoContainerHeader}>{userProps.name}</li>
+				<li className={styles.infoContainerSubHeader}>ABOUT</li>
+				<li className={styles.infoContainerContent}>{userProps.about}</li>
 				<li className={styles.infoContainerFooter}>Read More</li>
 				<hr />
-				<li><span>ORGANISATIONS</span><span className={styles.infoContainerValue}>10</span></li>
-				<li><span>CONTENTS</span><span className={styles.infoContainerValue}>25</span></li>
+				<li><span>Organisations</span><span className={styles.infoContainerValue}>{userProps.organisationCount}</span></li>
+				<li><span>Contents</span><span className={styles.infoContainerValue}>{userProps.contentCount}</span></li>
 			</ul>
 		</div>
 	)
