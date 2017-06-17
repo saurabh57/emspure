@@ -5,49 +5,53 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+var statusCode = sails.config.statusCode;
 
 function UserController(){
 
-	this.in = function(req,res) {
-		var user = {
-			email: req.body.email,
-			password: req.body.password
+	this.signin = function(req,res) {
+		var resObj = {}, user = {
+			email: req.body.email || 'ss@gmail.com',
+			password: req.body.password || 'ss'
 		};
 
 		User.findOne(user).exec(function(err, data){
 			if(err){
-				console.log('[user in error]',err);
-				res.send(500);
+				resObj.statusCode = 400;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.error = err;
 			} else if(data){
-				console.log(data);
+				resObj.statusCode = 200;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.response = User.toJSON(data);
 			}
-
-			res.send(200);
+			console.log(resObj)
+			res.send(resObj);
 		});
 	},
 
-	this.up = function(req,res) {
-		var user = {
-			firstName: req.body.firstName,
-			middleName: req.body.middleName,
-			lastName: req.body.lastName,
-			email: req.body.email,
-			password: req.body.password
-		};
+	this.signup = function(req,res) {
+		var resObj = {};
 
-		User.create(user).exec(function(err, data){
+		User.create(req.body).exec(function(err, data){
 			if(err){
-				console.log('[user create error]',err);
-				res.send(500);
+				resObj.statusCode = 400;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.error = err;
 			} else if(data){
-				console.log(data);
+				resObj.statusCode = 200;
+				resObj.status = statusCode[resObj.statusCode].messageKey;
+				resObj.message = statusCode[resObj.statusCode].message;
+				resObj.response = User.toJSON(data);
 			}
-
-			res.send(200);
+			res.send(resObj);
 		});
 	},
 
-	this.update = function(req,res) {
+	this.updateUser = function(req,res) {
 		var user = {
 			firstName: req.body.firstName,
 			middleName: req.body.middleName,
@@ -59,16 +63,16 @@ function UserController(){
 		User.update({id:req.body.id},user).exec(function(err, data){
 			if(err){
 				console.log('[user update error]',err);
-				res.send(500);
+				resObj.status = statusCode[400].messageKey;
 			} else if(data){
+				resObj.status = statusCode[200].messageKey;
 				console.log(data);
 			}
 
-			res.send(200);
+			res.send(resObj);
 		});
 	}
 
 }
 
 module.exports = new UserController();
-
