@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import ProfilePic from './common/ProfilePic';
 import styles from 'styles/components/profileSummaryCard';
 import { UserDefault } from 'sources';
+import Expander from './common/Expander';
 
 class ProfileSummaryCard extends Component{
 	constructor(props){
@@ -46,8 +47,7 @@ const BasicInfo = () =>{
 			<ul className={styles.infoContainer}>
 				<li className={styles.infoContainerHeader}>{userProps.name}</li>
 				<li className={styles.infoContainerSubHeader}>ABOUT</li>
-				<li className={styles.infoContainerContent}>{userProps.about}</li>
-				<li className={styles.infoContainerFooter}>Read More</li>
+				<li className={styles.infoContainerContent}><Expander expText={userProps.about} /></li>
 				<hr />
 				<li><span>Organisations</span><span className={styles.infoContainerValue}>{userProps.organisationCount}</span></li>
 				<li><span>Contents</span><span className={styles.infoContainerValue}>{userProps.contentCount}</span></li>
