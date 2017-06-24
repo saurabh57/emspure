@@ -47,7 +47,7 @@ const BasicInfo = () =>{
 			<ul className={styles.infoContainer}>
 				<li className={styles.infoContainerHeader}>{userProps.name}</li>
 				<li className={styles.infoContainerSubHeader}>ABOUT</li>
-				<li className={styles.infoContainerContent}><Expander expText={userProps.about} /></li>
+				<li className={styles.infoContainerContent}><Expander expText={userProps.about} thresholdLength={60}/></li>
 				<hr />
 				<li><span>Organisations</span><span className={styles.infoContainerValue}>{userProps.organisationCount}</span></li>
 				<li><span>Contents</span><span className={styles.infoContainerValue}>{userProps.contentCount}</span></li>

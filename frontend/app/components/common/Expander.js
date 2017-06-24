@@ -26,20 +26,20 @@ class Expander extends Component{
 	            expanded: true
 	        });
     	}
-               
     }
 
-    getExpanderText(expText) {
+    getExpanderText(expText, thLength) {
     	let divText = expText;
         if (!this.state.expanded) {
-        	divText = expText.substring(0, 86);
+        	divText = expText.substring(0, thLength || 86);
         }
         return <div className = {styles.expanderContent}> {divText} </div>;
     }
 
 	render(){
 		const expText = this.props.expText;
-		var expandedDiv = this.getExpanderText(expText);
+		const thresholdLength = this.props.thresholdLength;
+		var expandedDiv = this.getExpanderText(expText, thresholdLength);
 	    return (
 	        <div>
 	            { expandedDiv }
